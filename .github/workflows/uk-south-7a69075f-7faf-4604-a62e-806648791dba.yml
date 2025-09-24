@@ -1,8 +1,7 @@
 "jobs":
   "apply-manifest":
     "runs-on":
-    - "self-hosted"
-    - "solinas-ubuntu_22_04"
+    - "ubuntu-latest"
     "steps":
     - "name": "Setup Kube Context"
       "uses": "azure/k8s-set-context@v4"
