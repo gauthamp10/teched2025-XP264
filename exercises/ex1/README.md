@@ -21,14 +21,64 @@ response->set_text( |Hello World! | ).
 After completing these steps you will have...
 
 1.	Enter this code.
-```abap
-DATA(lt_params) = request->get_form_fields(  ).
-READ TABLE lt_params REFERENCE INTO DATA(lr_params) WITH KEY name = 'cmd'.
-  IF sy-subrc <> 0.
-    response->set_status( i_code = 400
-                     i_reason = 'Bad request').
-    RETURN.
-  ENDIF.
+```
+apiVersion: gateway.kyma-project.io/v2
+kind: APIRule
+metadata:
+
+  name: httpbin-xp264-050
+  namespace: xp264-050
+
+spec:
+  gateway: kyma-system/kyma-gateway
+  hosts:
+    - httpbin-xp264-050
+  rules:
+    - methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - PATCH
+      noAuth: true
+      path: /*
+  service:
+    name: httpbin-xp264-050
+    namespace: xp264-050
+    port: 80
+  timeout: 300
+
+```
+
+duplicate it to
+
+```
+apiVersion: gateway.kyma-project.io/v2
+kind: APIRule
+metadata:
+
+  name: httpbin-xp264-050-aws-route53-dns
+  namespace: xp264-050
+
+spec:
+  gateway: aws-route53-dns/quovadis-aws-route53-dns-gateway
+  hosts:
+    - httpbin-xp264-050.btp-quovadis-d726db6d.quovadis.kyma.dev.sap
+  rules:
+    - methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - PATCH
+      noAuth: true
+      path: /*
+  service:
+    name: httpbin-xp264-050
+    namespace: xp264-050
+    port: 80
+  timeout: 300
+
 
 ```
 
