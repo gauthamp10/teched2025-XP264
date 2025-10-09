@@ -7,18 +7,14 @@ jobs:
   deploy-all-namespaces:
     runs-on: ubuntu-latest
     permissions: 
-     contents: read
-     id-token: write
+      contents: read
+      id-token: write
     strategy:
       matrix:
         namespace: [xp264-001, xp264-002]
-    # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-using-a-public-action-in-a-subdirectory
-    # https://stackoverflow.com/questions/75733616/github-actions-how-to-call-a-reusable-workflow-as-a-step    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-      # https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#calling-a-reusable-workflow
-      - uses: ./.github/workflows/action.yml
-        with:
-          NAMESPACE: ${{ matrix.namespace }}
+    # https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#calling-a-reusable-workflow
+    # https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#using-a-matrix-strategy-with-a-reusable-workflow
+    uses: ./.github/workflows/reuse.yml
+      with:
+        NAMESPACE: ${{ matrix.namespace }}
       #secrets: inherit
