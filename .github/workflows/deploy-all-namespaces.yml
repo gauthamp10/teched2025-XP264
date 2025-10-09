@@ -13,7 +13,6 @@ permissions:
 
 jobs:
   deploy-all-namespaces:
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         namespace: [xp264-001, xp264-002]
