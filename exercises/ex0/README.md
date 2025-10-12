@@ -119,8 +119,8 @@ Easy navigation with the session landscape site:
 <div>
 <h1><a href="https://url.sap/3kf0ol">
 <p float="left">
-  <img src="../ex0/images/site_navigation.png" height="600"/>
-  <img src="../ex0/images/functional_architecture.png" height="600"/> 
+  <img src="../ex0/images/site_navigation.png" width="400" height="400"/>
+  <img src="../ex0/images/functional_architecture.png" width="400" height="800"/> 
 </p>
 </a></h1>
 </div>
