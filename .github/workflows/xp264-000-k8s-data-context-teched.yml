@@ -139,7 +139,8 @@ env:
 
         #export BTP_USERNAME=${{ vars.BTP_USERNAME }}
         #export BTP_PASSWORD=${{ secrets.BTP_PASSWORD }}
-        export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
+        #export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
+        export BTP_IDTOKEN=${{steps.get-github-jwt.outputs.githubJwt}}
 
         export RUNTIME_INDEX=${{ env.RUNTIME_INDEX }}
         export TF_VAR_runtime_context_workspace=${{ env.RUNTIME_CONTEXT_WORKSPACE }}
