@@ -37,7 +37,7 @@ Use "kyma [command] --help" for more information about a command.
 
 Please get familair with the available commands 
 
-## Exercise 1.1 Fire-fighter access to your kyma cluster
+## Exercise 1.1 - Fire-fighter access to your kyma cluster
 
 After completing these steps you will have created...
 
