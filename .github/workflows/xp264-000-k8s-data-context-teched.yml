@@ -39,7 +39,6 @@ on:
 ## Add shared Environment Variables across jobs here ##
 env:
   RUNTIME_ACTION: ${{ inputs.ACTION == 'deploy' && 'apply' || inputs.ACTION }}
-  ##RUNTIME_WORKSPACE: "runtime-context-${{ github.event.inputs.GLOBALACCOUNT }}"
 
   RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.runtime_context_index }}-${{ github.event.inputs.GLOBALACCOUNT }}"
   RUNTIME_WORKSPACE: "k8s-context-${{ inputs.runtime_context_index }}-${{ github.event.inputs.GLOBALACCOUNT }}"
@@ -157,8 +156,10 @@ env:
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
 
-        echo 'kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)'
-        echo 'kyma_provisioning_info=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kyma_provisioning_info)'
+        kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)
+        kyma_provisioning_info=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kyma_provisioning_info)
+        echo 'kubeconfig_sa=$kubeconfig_sa' >> $GITHUB_OUTPUT
+        echo 'kyma_provisioning_info=$kyma_provisioning_info' >> $GITHUB_OUTPUT
 
     - name: Terraform Results
       id: terraform_results
@@ -166,7 +167,7 @@ env:
       run: |
 
         echo "kubeconfig-sa"
-        echo ${{ steps.terraform_output.outputs.config_sa }}
+        echo ${{ steps.terraform_output.outputs.config_sa }} 
         echo "kyma_provisioning_info"
         echo ${{ steps.terraform_output.outputs.provisioning_info }}
 
