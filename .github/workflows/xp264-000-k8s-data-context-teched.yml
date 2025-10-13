@@ -141,7 +141,6 @@ env:
         cp $KUBECONFIG ./uk-xp264.yaml
         export TOTO=$KUBECONFIG
 
-
         # https://able8.medium.com/how-to-merge-multiple-kubeconfig-files-into-one-36fc987c2e2f
         #
         export KUBECONFIG=:./uk-xp264.yaml:./xp264-000.yaml:./japanese-east.yaml:./us-east.yaml:./uk-south.yaml
