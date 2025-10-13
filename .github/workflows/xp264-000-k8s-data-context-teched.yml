@@ -126,12 +126,15 @@ env:
         kubectl config get-clusters
         cp $KUBECONFIG ./uk-xp264.yaml
         export TOTO=$KUBECONFIG
+        echo $TOTO
 
         export KUBECONFIG=:./uk-xp264.yaml:./xp264-000.yaml
         kubectl config view --flatten > all-in-one-kubeconfig.yaml
         export KUBECONFIG=$TOTO
+        echo $KUBECONFIG
 
         cp all-in-one-kubeconfig.yaml $KUBECONFIG
+        echo $KUBECONFIG
 
         # https://able8.medium.com/how-to-merge-multiple-kubeconfig-files-into-one-36fc987c2e2f
         kubectl config get-clusters --kubeconfig all-in-one-kubeconfig.yaml
