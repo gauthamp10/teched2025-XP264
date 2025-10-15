@@ -268,8 +268,9 @@ env:
 
         echo $kyma_parameters
         echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
-        #cat ./cis-secret.json
+        
         ls -al $CONFIG_DIRECTORY
+        cat $CONFIG_DIRECTORY/cis-secret.json
 
       env:
         RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
