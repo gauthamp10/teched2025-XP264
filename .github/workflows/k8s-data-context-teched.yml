@@ -256,6 +256,7 @@ env:
       run: |
         terraform workspace select ${{ env.RUNTIME_WORKSPACE }}
         export TF_WORKSPACE=${{ env.RUNTIME_WORKSPACE }}
+        export CONFIG_DIRECTORY=${{ env.CONFIG_DIRECTORY }}
 
         export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
@@ -268,6 +269,7 @@ env:
         echo $kyma_parameters
         echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
         #cat ./cis-secret.json
+        ls -al $CONFIG_DIRECTORY
 
       env:
         RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
