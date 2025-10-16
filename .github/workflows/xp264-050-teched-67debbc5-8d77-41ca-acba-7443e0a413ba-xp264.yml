@@ -74,12 +74,12 @@
         # echo "Simulate some traffic to the HTTPBIN APP deployed on Kyma runtime under hostname ${HTTPBIN_HOST}"
         # for f in {1..10}; do curl https://${HTTPBIN_HOST}/headers; done
 
-        while [ "$(curl ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers)" = "no healthy upstream" ]
+        while [ "$(curl -sS ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers)" = "no healthy upstream" ]
         do 
           echo "no healthy upstream -- wait for the APIRule resource to be ready"
-          sleep 5
+          sleep 6
         done        
-        for f in {1..10}; do curl ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers; done
+        for f in {1..10}; do curl -sS ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers; done
         echo -e "You can now check the logs, metrics and traces in SAP Cloud Logging:\nhttps://url.sap/rw43o5"
 
 
