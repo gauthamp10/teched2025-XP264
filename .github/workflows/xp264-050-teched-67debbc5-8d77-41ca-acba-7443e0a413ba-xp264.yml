@@ -36,6 +36,7 @@
         kubectl get dnsentries -A  -o json | jq -n  'inputs | .items[].spec.dnsName '
         kubectl get dnsentries -A  -o json | jq -n  'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis"))'
     - "name": "kyma cli 3.2.0"
+      id: HTTPBIN_URL
       "run": |
         echo "Installing kyma cli..."
         curl -sSL "https://github.com/kyma-project/cli/releases/download/3.2.0/kyma_Linux_x86_64.tar.gz" |  tar -xzv kyma
@@ -57,10 +58,26 @@
 
         echo "Adding APIRules to other custom domains"
         HOSTNAME=$(kubectl get dnsentries -A  -o json | jq -n -r --arg namespace "$NAMESPACE" 'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis")) | select(contains("kyma.dev.sap")) | split("*") | join("httpbin-\($namespace)")' )
-        echo $HOSTNAME
+        HTTPBIN_URL=https://$HOSTNAME
+        echo $HTTPBIN_URL
+        echo "\n"
         kubectl get apirules -ojson -n $NAMESPACE  | jq '.items[] '  | jq 'del(.metadata["annotations","labels","creationTimestamp","resourceVersion","uid", "selfLink", "ownerReferences", "generation"], .status)' |  jq --arg namespace "$NAMESPACE" '.metadata |= . + {"name": "httpbin-\($namespace)-01" }' | jq --arg hostname "$HOSTNAME" '.spec |= . + {"gateway": "aws-route53-dns/quovadis-aws-route53-dns-gateway", "hosts": ["\($hostname)"] } ' | kubectl apply -n $NAMESPACE -f -
-        URL=$(kubectl get dnsentries -A  -o json | jq -n -r --arg namespace "$NAMESPACE" 'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis")) | select(contains("kyma.dev.sap")) | split("*") | join("https://httpbin-\($namespace)")' )
-        echo "Additionally, httpbin-$NAMESPACE app has been made available under the custom domain at: $URL"
+        HTTPBIN_URL=$(kubectl get dnsentries -A  -o json | jq -n -r --arg namespace "$NAMESPACE" 'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis")) | select(contains("kyma.dev.sap")) | split("*") | join("https://httpbin-\($namespace)")' )
+        echo "Additionally, httpbin-$NAMESPACE app has been made available under the custom domain at: $HTTPBIN_URL"
+        echo "HTTPBIN_URL=$HTTPBIN_URL" >> $GITHUB_OUTPUT
+
+    - "name": "Simulate load on httpbin app in a given namespace"
+      "run": |
+        echo "Get the HTTPBIN APP Hostname"
+        # TODO: use dynamic namespace from previous exercises
+        # export HTTPBIN_HOST=$(kubectl get virtualservices.networking.istio.io -l apirule.gateway.kyma-project.io/v1beta1=httpbin-app.default -ojsonpath='{.items[0].spec.hosts[0]}')
+        # echo "Simulate some traffic to the HTTPBIN APP deployed on Kyma runtime under hostname ${HTTPBIN_HOST}"
+        # for f in {1..10}; do curl https://${HTTPBIN_HOST}/headers; done
+
+        for f in {1..10}; do curl ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers; done
+        echo "You can now check the logs, metrics and traces in SAP Cloud Logging"
+
+
 "name": "xp264-050-67debbc5-8d77-41ca-acba-7443e0a413ba-xp264"
 "on":
   "workflow_dispatch":
