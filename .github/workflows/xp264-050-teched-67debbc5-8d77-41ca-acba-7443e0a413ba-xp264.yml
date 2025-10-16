@@ -54,9 +54,9 @@
 
         echo "deploy a docker image and expose it via an API Rule v2"
         kubectl delete all -l app.kubernetes.io/name=httpbin-$NAMESPACE -n $NAMESPACE
-        ./kyma app push --name httpbin-$NAMESPACE --image kennethreitz/httpbin --istio-inject true --expose --container-port 80 --namespace $NAMESPACE
+        ./kyma app push --name httpbin-$NAMESPACE --image kennethreitz/httpbin --istio-inject true --expose --quiet --container-port 80 --namespace $NAMESPACE
 
-        echo "Adding APIRules to other custom domains"
+        echo -e "\nAdding APIRules to other custom domains"
         HOSTNAME=$(kubectl get dnsentries -A  -o json | jq -n -r --arg namespace "$NAMESPACE" 'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis")) | select(contains("kyma.dev.sap")) | split("*") | join("httpbin-\($namespace)")' )
         HTTPBIN_URL=https://$HOSTNAME
         echo -e "$HTTPBIN_URL\n"
