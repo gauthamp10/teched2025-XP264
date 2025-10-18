@@ -16,18 +16,18 @@
           "apiVersion": "v1"
           "clusters":
           - "cluster":
-              "certificate-authority-data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1akNDQWs2Z0F3SUJBZ0lRQnBmaHN3SmppckNMRlNoQ05UM0h5ekFOQmdrcWhraUc5dzBCQVFzRkFEQU4KTVFzd0NRWURWUVFERXdKallUQWVGdzB5TlRFd01ESXdOalF6TUROYUZ3MHpOVEV3TURJd05qUTBNRE5hTUEweApDekFKQmdOVkJBTVRBbU5oTUlJQm9qQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FZOEFNSUlCaWdLQ0FZRUF1N2d3ClBMbmFSY2k4bVZXWWdSYmNveHBNN1FybTVPQ0pUYy9xYVRNaHRqVUt2TDYyYnFPWmFBQURNaDMxVjlTbmc2S1UKUkFwdzR5ODlselNsdUh1SGZySEVmVGtXT3E4dDBqb2M1eW4raFVEeTZTbE9ZVlJ5RmY5UlZMOHV2MnRFOURkZQpHUk9CTFdXRXIwbkM2VzYwYTdUUENFeVJvQzIyU3M2cDNzZVBDaVJlVWdENk11ck8yeWxPQzFGSU9JdFZ4anlkCkFWb3hJaXlwa3l0RGw0MkRINkQwczgydW91VzZ2SVpkbWxZcW44YlMrbUZ2QkYvMGlIZC92UEdaMmo5MTcrc2QKQ1BrckF5enkxd1Y0TTRtZ1JJZ3ZMVG1PRDZyemRvOHJWRkFhUktRd3luMGplcjhhUnVzekFJejFxUDNzSlkxSAo0SlpmRzBxQUFHM2V0RkExc2Z1eWk5ZEpSZFNvZ0V6QnQzYUFWRUZKcEJlWHlncTB1K1phVkY2dWQvaDFYMmlVCjhFV1BxVDN5aHgveFZOaVpQaGRpczQyMXZPRDU0Q1RSS0JsMEVwODh6UXJkV3hGR0oxODRzcE0rZkkyc0twWTMKbURNZXkyd0ZadXR5UU10M0VqSlRsWkFWRVVPc1JIcnZZV0N0ZzF5OURITXRmb29xeXpZZ0R5UWdHTTdoQWdNQgpBQUdqUWpCQU1BNEdBMVVkRHdFQi93UUVBd0lCcGpBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXCkJCU0RtSHkxWkM2TjhjUWp4SjdDY2djcGxqbkZoakFOQmdrcWhraUc5dzBCQVFzRkFBT0NBWUVBSnkxYzBHZGcKVC9WTTBicExSbzUxYnVZUHZqMGFlenpKYWUweS9lMy8vVUptTmNBOCtIb2xhaFZhOXUxVE5GYzAxK1UwR1dLNQpJVUZFNWExdjVCdWlMOGJBRzhyV0JkeVJ3QkJJelRQVTdvRm9EblZuU1FOTXVYSVNUdTE0QS84NzVkK1crM0FYCnhLand6U0RHc0U0Wmp4Zy9vVnJDNDJZU3pFcW5ISkNpTGNsVWFzM1lzNWVTWjFQNEhvcTRhcjE0U05pK20xejkKVzNLb3R3Ly9PUU95dFJGcVhBc2ZrTkVMQ25rV2RONG1FWEdOVVJpZjdDTjJ4L05LQm9yU0dWa0ZtNjd1WWJqSgoxcDhHZTIwK3ZJZEdvR1d3Q2lLendLM0hiUHpVbS9FbDZLZVVzMVdIL0o1TFRZelNJU3Q1eldyZkl6amtSY1E2CkQ1OTdWN2NBQVlDL3dWWC9wdkdWeG1DR3J1aVY5QTRjTzhYNlVFaVZaUE1ubW5wUE9XVW1KV29PSklqYkFJakIKWGNkaWpHU1RtYzBDUmxIYjUxSGdYUkhNRCs0RXhyQzV0VFQ1NVF4R1l2SHZ4SzFCUDFsbDVhU1JHdHMyd1FoMAprbzN3eW4wUSt2OUhWMzRmVXZTc1doZ0NRdTdmcHl3WUVLQzBUNWdVYlNCQWRPeTA0TDkyemY3VwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
-              "server": "https://api.b84edf3.kyma.ondemand.com"
-            "name": "garden-kyma--b84edf3-external"
+              "certificate-authority-data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1ekNDQWsrZ0F3SUJBZ0lSQU9DemdDNWw0TmRHNUhxSi9ieTJnRGd3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVd09USXpNakV3TmpNd1doY05NelV3T1RJek1qRXdOek13V2pBTgpNUXN3Q1FZRFZRUURFd0pqWVRDQ0FhSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnR1BBRENDQVlvQ2dnR0JBTGl2Cmp2Mkt3RklIckRGbC9pQlBFOGVxUDVsZ2dEdHJ3bUtHUFQyTVNEaTBDWnhjUVFwbVpseUs1ZlREQzVrUmdQYVMKUmZJN2hSMVNCVW5BMmN6ZUxJU0NlTTAwMnI3ZVJyZ0FIUUlYWi85SkR2aDM2OFhJSDdXazdVY1F6TU9DbW13ZwpmNDBLYVNRUGVSN1hmNnhlTGc5SFVGQnNNZ1dDcE1EYmZ2dnE1d2VDdVRnS0d2eTZlVlVQaXBoTGIyMTFpbURFCk5xS1N2RW1JeThPUTdBUWozVzdsNVJvbTFSSVBQUWVHaXBnQ3NaVE1oT2JnYStPYVNzS1pFZlBWQnltWjI1UE0KOW5Nd0RnT25mSzJnMlA3bzQvdEFRdjg3MWU0am5nTUdPVjhncmVoVGdCN3VnVzFsdkRXNTBOU3RDQmxLMjlRTwpwVHdCbXh3R1lMU1VyU0hBWFhoUUNUS1IrcmV3VEJSM3hIMk5uaGl4dFNXdkFOUXAzZDNocjVnSE1ZQVN5M3VvCjRYdFZTRStvTnlyRVV1RGhicVJmK3hyRzlSdndidHNWZkNrMlNKYTEwdGN1R1VaQ1BJc2VXTG9nYzRXRHE3M3cKRDhENUQ3Y1BoYjBrZ1UzbmhWTHphaGhCelUwOWM1LzVnRUNYVC9pQk0wcmZBRytTNUkyQ1g0ZkRvTHFaVHdJRApBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWFZd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFCkZnUVVrQ1VaZjE1RFY4ZkNmUDFMNVhBWXFEa29JY013RFFZSktvWklodmNOQVFFTEJRQURnZ0dCQURxNnRrcm0KblhJU1lvbVhwR1lSRFBrS2x4RVptVVRPQnpCL1lFNXVxMkdVclNwVDdKRkFuZmkrKzhmZDRCaGZPM2pMdmsyZApmL1ExL0dKT1g2aVVTMGJIUnlrNFo0SHZUN1l0bkJ6NkVlWFBBWGMyMmZpUjY3b0ZsdXFoUmRsOXhGdUFaWTlJCnFCem1ZNmVOdXJKcStBL3VLZG1xakFXNTRhTXhZWGtERWFFaEszYVV4Ukx1RkMrdjFEQ2RCbWdGNnJTUnQxZHMKTUtJM1ZzTFRxTG1hU0ZQdURad3lYTDNsY0xtL2F5UWFMNlQ5V25QT1o4MWJBejdwMVBRU004RVZYS1o1UjV2RQpKWUFGWUw4MWN3ZEEwWW4wak5JdHA4ZDNpMm9wenMzMkk2K2F4Sjh0Q1I5amZhTXh2M3p6Z0RxZTJvQ0NQTGZ4Cm04dks3TFFGbXI4SU1GL0kycDhTYVNCeVlpYkI0OVNaQ1hvU3hJYTZqaEFTaEFUZzkvSENReXZ5WkhGUEtwbjEKdVorQzMrVWd3YkhkbXJBYjRQaGNJSHJuclE3T3VJMlc0VUt5TEZvTzNTL3k1eVU5RE9XZmZ6dU1KMXRmaDNjWQplTmNZa1B4R0svUnFpN0h4VUtwWFM5emJIM2pqeWg4aTltRE9xZ1NmTFdKcldUZVBYMndUT3l1UHNRPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+              "server": "https://api.c-99567a9.kyma.ondemand.com"
+            "name": "garden-kyma--c-99567a9-external"
           "contexts":
           - "context":
-              "cluster": "garden-kyma--b84edf3-external"
-              "user": "garden-kyma--b84edf3-external"
-            "name": "garden-kyma--b84edf3-external"
-          "current-context": "garden-kyma--b84edf3-external"
+              "cluster": "garden-kyma--c-99567a9-external"
+              "user": "garden-kyma--c-99567a9-external"
+            "name": "garden-kyma--c-99567a9-external"
+          "current-context": "garden-kyma--c-99567a9-external"
           "kind": "Config"
           "users":
-          - "name": "garden-kyma--b84edf3-external"
+          - "name": "garden-kyma--c-99567a9-external"
             "user":
               "exec":
                 "apiVersion": "client.authentication.k8s.io/v1"
@@ -109,7 +109,7 @@
         HTTPBIN_URL=$(kubectl get dnsentries -A  -o json | jq -n -r --arg namespace "$NAMESPACE" 'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis")) | select(contains("kyma.dev.sap")) | split("*") | join("https://httpbin-\($namespace)")' )
         echo -e "Additionally, httpbin-$NAMESPACE app has been made available under the custom domain at:\n$HTTPBIN_URL"
         echo "HTTPBIN_URL=$HTTPBIN_URL" >> $GITHUB_OUTPUT
-"name": "_uk-xp264--b84edf3-teched25"
+"name": "_japan-east--c-99567a9-teched25"
 "on":
   "workflow_call":
     "inputs":

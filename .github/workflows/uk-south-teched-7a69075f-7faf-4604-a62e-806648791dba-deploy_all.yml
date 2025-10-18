@@ -1,0 +1,71 @@
+name: Deploy all namespaces on all clusters
+on:
+  workflow_dispatch:
+
+permissions: 
+  contents: read
+  id-token: write
+
+jobs:
+  deploy-all-namespaces:
+    strategy:
+      max-parallel: 4
+      matrix:
+        namespace: [
+	                    "xp264-001",
+	                    "xp264-002",
+	                    "xp264-003",
+	                    "xp264-004",
+	                    "xp264-005",
+	                    "xp264-006",
+	                    "xp264-007",
+	                    "xp264-008",
+	                    "xp264-009",
+	                    "xp264-010",
+	                    "xp264-011",
+	                    "xp264-012",
+	                    "xp264-013",
+	                    "xp264-014",
+	                    "xp264-015",
+	                    "xp264-016",
+	                    "xp264-017",
+	                    "xp264-018",
+	                    "xp264-019",
+	                    "xp264-020",
+	                    "xp264-021",
+	                    "xp264-022",
+	                    "xp264-023",
+	                    "xp264-024",
+	                    "xp264-025",
+	                    "xp264-026",
+	                    "xp264-027",
+	                    "xp264-028",
+	                    "xp264-029",
+	                    "xp264-030",
+	                    "xp264-031",
+	                    "xp264-032",
+	                    "xp264-033",
+	                    "xp264-034",
+	                    "xp264-035",
+	                    "xp264-036",
+	                    "xp264-037",
+	                    "xp264-038",
+	                    "xp264-039",
+	                    "xp264-040",
+	                    "xp264-041",
+	                    "xp264-042",
+	                    "xp264-043",
+	                    "xp264-044",
+	                    "xp264-045",
+	                    "xp264-046",
+	                    "xp264-047",
+	                    "xp264-048",
+	                    "xp264-049",
+	                    "xp264-050"
+                  ]
+        cluster: [ "7a69075f-7faf-4604-a62e-806648791dba" ]
+
+    uses: ./.github/workflows/_uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml
+    with:
+      NAMESPACE: ${{ matrix.namespace }}
+      CLUSTER_GUID: ${{ matrix.cluster }}
