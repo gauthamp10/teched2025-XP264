@@ -131,7 +131,7 @@ resource "btp_subaccount_trust_configuration" "custom_idp" {
   name              = "${local.subaccount_domain}"
   domain            = local.custom_domain
 
-  depends_on        = [btp_subaccount_subscription.identity_instance]
+  depends_on        = [btp_subaccount.create_subaccount]
 
 }
 
@@ -139,6 +139,7 @@ resource "btp_subaccount_trust_configuration" "custom_idp" {
 #
 data "btp_subaccount_trust_configuration" "custom_idp" {
   depends_on    = [btp_subaccount_trust_configuration.custom_idp]
+  
   subaccount_id = data.btp_subaccount.context.id
   origin        = btp_subaccount_trust_configuration.custom_idp.origin
 }
