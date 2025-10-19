@@ -232,3 +232,13 @@ data "btp_subaccount_subscription" "faas_xp264_mt" {
 output "faas_xp264_mt_subscription_url" {
   value = one(btp_subaccount_subscription.faas_xp264_mt[*].subscription_url)
 }
+
+locals {
+
+  consumer_tenant_url = "https://emea.cockpit.btp.cloud.sap/cockpit?idp=${var.BTP_CUSTOM_IDP}#/globalaccount/${BTP_GLOBAL_ACCOUNT}/subaccount/${data.btp_subaccount.context.id}"
+  
+}
+
+output "consumer_tenant_url" {
+  value = local.consumer_tenant_url
+}
