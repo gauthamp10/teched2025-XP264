@@ -74,8 +74,8 @@ env:
   GLOBALACCOUNT: "c1f19148-71f7-4883-9f86-8d5ee7634dec"
   IDP: "anuk8cmfw.accounts.ondemand.com"
 
-  CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt/"
-  PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt/"  
+  CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt-data/"
+  PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt-data/"  
 
 "jobs":
   "subscribe-manifest":
@@ -166,7 +166,7 @@ env:
         RUNTIME_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
         PROVIDER_WORKSPACE: "provider-context-${{env.GLOBALACCOUNT}}" 
 
-"name": "teched-xp264-mt"
+"name": "teched-xp264-mt-data"
 
 "permissions":
   "contents": "read"
