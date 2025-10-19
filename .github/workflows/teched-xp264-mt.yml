@@ -106,8 +106,8 @@ env:
         terraform_wrapper: false
         terraform_version: latest
 
-    - name: Terraform Init
-      id: terraform_init
+    - name: Terraform Init MT check
+      id: terraform_init_mt
       shell: bash
       run: |
         wget -qO- https://ipecho.net/plain ; echo
@@ -122,12 +122,14 @@ env:
         export TF_WORKSPACE=${{ env.RUNTIME_WORKSPACE }}
 
       env:
-        RUNTIME_CONTEXT_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
         RUNTIME_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
         PROVIDER_WORKSPACE: "provider-context-${{env.GLOBALACCOUNT}}" 
+        CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt-data/"
+        PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt-data/"  
 
-    - name: Terraform Apply 
-      id: terraform_apply
+
+    - name: Terraform Apply MT check
+      id: terraform_apply_mt
       shell: bash
       run: |
         export TF_WORKSPACE=${{ env.RUNTIME_WORKSPACE }}
@@ -144,9 +146,82 @@ env:
         -auto-approve -no-color
 
       env:
-        RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
         RUNTIME_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
         PROVIDER_WORKSPACE: "provider-context-${{env.GLOBALACCOUNT}}" 
+        CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt-data/"
+        PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt-data/"  
+
+
+    # https://stackoverflow.com/questions/69925970/how-to-save-terraform-output-variable-into-a-github-action-s-environment-variabl
+    - name: Terraform Output MT check
+      id: terraform_output_mt
+      shell: bash
+      run: |
+        terraform workspace select ${{ env.RUNTIME_WORKSPACE }}
+        export TF_WORKSPACE=${{ env.RUNTIME_WORKSPACE }}
+        export CONFIG_DIRECTORY=${{ env.CONFIG_DIRECTORY }}
+
+        export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
+
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output btp_subaccount_id 
+        btp_subaccount_id=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output btp_subaccount_id)
+
+        echo $btp_subaccount_id
+        echo "btp_subaccount_id=$btp_subaccount_id" >> $GITHUB_OUTPUT
+
+
+      env:
+        RUNTIME_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
+        PROVIDER_WORKSPACE: "provider-context-${{env.GLOBALACCOUNT}}" 
+        CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt-data/"
+        PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt-data/"  
+
+    - name: Terraform Init
+      id: terraform_init
+      shell: bash
+      run: |
+        wget -qO- https://ipecho.net/plain ; echo
+
+        export CONFIG_DIRECTORY=${{ env.CONFIG_DIRECTORY }}
+        export TF_REGISTRY_CLIENT_TIMEOUT=30s
+        export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
+
+        terraform workspace select -or-create ${{ env.RUNTIME_WORKSPACE }} || echo "Workspace ${{ env.RUNTIME_WORKSPACE }} already exists or cannot be created"
+
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} init -upgrade -no-color
+        export TF_WORKSPACE=${{ env.RUNTIME_WORKSPACE }}
+
+      env:
+        RUNTIME_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
+        PROVIDER_WORKSPACE: "provider-context-${{env.GLOBALACCOUNT}}" 
+        CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt/"
+        PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt/"  
+
+    - name: Terraform Apply 
+      id: terraform_apply
+      shell: bash
+      run: |
+        export TF_WORKSPACE=${{ env.RUNTIME_WORKSPACE }}
+        export CONFIG_DIRECTORY=${{ env.CONFIG_DIRECTORY }}
+        export TF_REGISTRY_CLIENT_TIMEOUT=30s
+
+        export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
+        export BTP_GLOBAL_ACCOUNT=${{env.GLOBALACCOUNT}}
+  
+        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} ${{ env.RUNTIME_ACTION }} \
+        -var BTP_GLOBAL_ACCOUNT=${{env.GLOBALACCOUNT}} \
+        -var BTP_CUSTOM_IDP=${{ env.IDP }} \
+        -var BTP_SUBACCOUNT=${{ github.event.inputs.subaccount_name }} \
+        -var subaccount_id=${{ steps.terraform_output_mt.outputs.btp_subaccount_id }}
+        -auto-approve -no-color
+
+      env:
+        RUNTIME_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
+        PROVIDER_WORKSPACE: "provider-context-${{env.GLOBALACCOUNT}}" 
+        CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt/"
+        PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt/"  
 
     # https://stackoverflow.com/questions/69925970/how-to-save-terraform-output-variable-into-a-github-action-s-environment-variabl
     - name: Terraform Output # https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#steps-context
@@ -162,9 +237,10 @@ env:
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
 
       env:
-        RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
         RUNTIME_WORKSPACE: "mt-context-${{ inputs.subaccount_name }}-${{env.GLOBALACCOUNT}}"
         PROVIDER_WORKSPACE: "provider-context-${{env.GLOBALACCOUNT}}" 
+        CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt/"
+        PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt/"  
 
 "name": "teched-xp264-mt"
 
