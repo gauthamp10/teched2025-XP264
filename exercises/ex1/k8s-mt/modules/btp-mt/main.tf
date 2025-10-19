@@ -55,7 +55,7 @@ resource "btp_subaccount" "create_subaccount" {
 }
 
 data "btp_subaccount" "context" {
-  id = btp_subaccount.create_subaccount[0].id
+  id = btp_subaccount.create_subaccount.id
 }
 
 output "btp_subaccount_labels" {
