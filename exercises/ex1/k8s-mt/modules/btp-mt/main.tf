@@ -225,7 +225,7 @@ data "btp_subaccount_subscription" "faas_xp264_mt" {
 
   subaccount_id = data.btp_subaccount.context.id
   app_name      = one(time_sleep.subscription_propagation[*].triggers["app_name"]) 
-  plan_name     = one(time_sleep.subscription_propagation[*].triggers["plan_name"]) 
+  plan_name     = "default" //one(time_sleep.subscription_propagation[*].triggers["plan_name"]) 
 }
 
 output "faas_xp264_mt_subscription_url" {
