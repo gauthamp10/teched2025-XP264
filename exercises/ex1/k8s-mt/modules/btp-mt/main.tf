@@ -161,7 +161,10 @@ resource "time_sleep" "subscription_propagation" {
 
   triggers = {
     # This sets up a proper dependency on the faas-app-xp264-049-saas subscription association
-    subscription = [ for service in data.btp_subaccount_service_offerings.sapbtp.values: service.catalog_name if service.catalog_name == "faas-app-xp264-049-saas" ][0]
+    
+    //subscription = [ for service in data.btp_subaccount_service_offerings.sapbtp.values: service.catalog_name if service.catalog_name == "faas-app-xp264-049-saas" ][0]
+
+    subscription = "faas-app-xp264-049-saas"
 
   }
 }
