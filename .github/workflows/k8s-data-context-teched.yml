@@ -310,11 +310,8 @@ env:
 
         kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters > ./tf_output.json
-        KymaModules=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json KymaModules | jq  '.[]  ')
         kyma_parameters=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters | jq -R)
-
         echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
-        echo "KymaModules=$KymaModules" >> $GITHUB_OUTPUT
 
         ls -al $CONFIG_DIRECTORY
         cat $CONFIG_DIRECTORY/cis-secret.json
@@ -340,8 +337,7 @@ env:
       id: json2html
       uses: Enovade/json2html@v0.2.3
       with:
-#        json: ${{ steps.terraform_output.outputs.kyma_parameters }}
-        json: ${{ steps.terraform_output.outputs.KymaModules }}
+        json: ${{ steps.terraform_output.outputs.kyma_parameters }}
 
     - name: Terraform Results
       id: terraform_results
