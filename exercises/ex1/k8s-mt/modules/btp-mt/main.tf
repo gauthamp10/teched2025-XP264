@@ -160,6 +160,15 @@ output "sapbtp" {
 }
 
 
+data "btp_subaccount_subscriptions" "all" {
+  subaccount_id = data.btp_subaccount.context.id
+}
+
+output "subscriptions_all" {
+  value = data.btp_subaccount_subscriptions.all.values
+}
+
+
 resource "time_sleep" "subscription_propagation" {
   count = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? 1 : 0
 
