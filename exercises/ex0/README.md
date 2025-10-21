@@ -114,8 +114,8 @@ Easy navigation with the session landscape site with your allocated student's us
 <div>
 <h1><a href="https://url.sap/3kf0ol">
 <p float="left">
-  <img src="../ex0/images/site_navigation.png" width="400" height="800"/>
-  <img src="../ex0/images/functional_architecture.png" width="400" height="800"/> 
+  <img src="../ex0/images/site_navigation.png" width="500" height="800"/>
+  <img src="../ex0/images/functional_architecture.png" width="500" height="800"/> 
 </p>
 </a></h1>
 </div>
