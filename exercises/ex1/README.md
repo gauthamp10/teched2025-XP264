@@ -4,7 +4,20 @@
 ## Exercise 1.0 - Discover SAP Kyma architecture
 
 
-  * Architecture diagram 
+There are two main components in the SAP BTP, Kyma Runtime architecture:
+
+  * Kyma Control Plane (KCP)
+  * Kyma Runtime (SKR)
+
+### Kyma Control Plane (KCP)  
+Kyma Control Plane is a central component that manages the lifecycle of the Kyma Runtime clusters. It is responsible for deploying, configuring, and monitoring the underlying Kubernetes clusters and the Kyma modules running on them. KCP provides a unified interface for users to manage their clusters, install new modules, and monitor the health and performance of the runtime environment.  
+
+Currently, the KCP is a single instance deployed in the Google Cloud Platform on top of GKE cluster. The future plan is to have multiple instances of KCP as to be able to support restricted markets and improve scalability.  
+
+### Kyma Runtime (SKR)  
+Each Kyma Runtime instance is a separate Kubernetes cluster managed by the KCP. Customers can pick and choose which Kyma modules to install on their runtime, based on their specific requirements. The Kyma modules provide additional functionality and services to the runtime environment, such as service mesh integration, serverless computing, eventing, and API gateway. Some of the modules are added by default (istio, api-gateway and btp-operator), while others can be installed on demand.
+
+  * Kyma Runtime (SKR) architecture diagram 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
