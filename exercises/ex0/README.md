@@ -53,14 +53,12 @@ This step is optional and you can be use instead any existing personal GitHub ac
 - Use you student's credentials to login
 
 
-![](./ex0/images/SAPTechEd25XP264.png)
-
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./ex0/images/SAPTechEd25XP264.png" alt="SAP-TechEd25-XP264" /></a></h1>
+<h1><a href=""><img class="aligncenter" src="./ex0/images/xp264.png" alt="SAP-TechEd25-XP264" /></a></h1>
 </div>
 </td>
 </tr>
