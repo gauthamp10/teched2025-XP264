@@ -66,11 +66,11 @@ The requirements to follow the exercises in this repository are...
 
   * [Exercise 1.0 - Discover SAP Kyma architecture](exercises/ex1#exercise-10---discover-sap-kyma-architecture)
   * [Exercise 1.1 - Easy access to your teched landscape.](exercises/ex1#exercise-11---easy-access-to-your-teched-landscape)
-  * [Exercise 1.2 - Discover Kyma CLI](exercises/ex1#exercise-11---discover-kyma-cli)
-  * [Exercise 1.3 - Firefighter access to your kyma cluster](exercises/ex1#exercise-11---fire-fighter-access-to-your-kyma-cluster)
-  * [Exercise 1.4 - Getting to know your kyma cluster in more details](exercises/ex1#exercise-12---getting-to-know-your-kyma-cluster)
+  * [Exercise 1.2 - Discover Kyma CLI](exercises/ex1#exercise-12---discover-kyma-cli)
+  * [Exercise 1.3 - Firefighter access to your kyma cluster](exercises/ex1#exercise-13---fire-fighter-access-to-your-kyma-cluster)
+  * [Exercise 1.4 - Getting to know your kyma cluster in more details](exercises/ex1#exercise-14---getting-to-know-your-kyma-cluster)
   * [Exercise 1.5 - Accessing other diagnostic information with btp and kubernetes terraform providers](exercises/ex1#exercise-15---accessing-other-diagnostic-information-with-btp-and-kubernetes-terraform-providers)
-  * [Exercise 1.6 - Multitenancy playground](exercises/ex1#exercise-15---btp-multitenancy-with-kyma)
+  * [Exercise 1.6 - Multitenancy playground](exercises/ex1#exercise-16---btp-multitenancy-with-kyma)
 
 
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
