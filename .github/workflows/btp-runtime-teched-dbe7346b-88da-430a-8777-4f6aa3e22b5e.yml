@@ -1,0 +1,129 @@
+"jobs":
+  "apply-manifest":
+    "runs-on":
+    - "ubuntu-latest"
+    "steps":
+    - "name": "Check out Git repository"
+      "uses": "actions/checkout@v4"
+    - "name": "Install Helm"
+      "uses": "azure/setup-helm@v4"
+    - "name": "Setup Kube Context"
+      "uses": "azure/k8s-set-context@v4"
+      "with":
+        "kubeconfig": |+
+          "apiVersion": "v1"
+          "clusters":
+          - "cluster":
+              "certificate-authority-data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1akNDQWs2Z0F3SUJBZ0lRTDkzRW45WGtQd2d0YW1jYmsrK3VmVEFOQmdrcWhraUc5dzBCQVFzRkFEQU4KTVFzd0NRWURWUVFERXdKallUQWVGdzB5TlRBNE1UVXhNakl3TkRkYUZ3MHpOVEE0TVRVeE1qSXhORGRhTUEweApDekFKQmdOVkJBTVRBbU5oTUlJQm9qQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FZOEFNSUlCaWdLQ0FZRUFwWEg4ClJSQlFsSUVmbGpWWVRUemdoZ0Z5UURwTjlUTnpOL2RGeGxDWk1VUWthS1FTZFByWEtGTXR2QlRRa0lnb0VvOVYKdXBZNU9WTkNDT0h1T3UvMWZwRkVwS1ZHQUJ6c3ZsSFVpQjhUZ09hcVR4OXQ4UkxTRkRxaGF3anZBWVBTQ1U4ZgpoN3NpOEUyVzBqT0E0MVhJUG9zWXN4K1BSekFVQnNSZURQT2huU3R6amdXWVhJbDc3WTZMNk1mNk0vSlpNeFFnCkdlZDFhMGtJWDI5d3J0cWJ6bnB0WmZPSHhkN0tmT0xCM0JLZzNUckVsME52QjNOMFVLV1ZpaUwwSjZrcmpsRmIKbEh3RUJxejJ0UlFJR08remZhdE9KdXJmcklST04wR21LYWttVEFzalNqei9KMW9SeVJzTHZoT0w5c3VTT0UrSApMcDNmZXdWNmkrZGgvT0Erc2tMMXRBWWdFWTVwbGV4cXVXVklvbGV2OURsSDBsTWxpMUpEY3hyUUtTclZrRy9hClY3bThWTjg4SWNBWmMrVTQwMmZKYytDUlFvQzh0c1VjWnY2TDk1K2pvL0VLQTQ3ZVJXdEp5czdkaGlNd2QzMmoKalZsaEw0anFVdDVCQnlPbUEvbnc2Vk9qdnU2R0lUNzlsTjBBZzB4dDJKdmpQWDJpL0Z2U2NyNHgrMG1IQWdNQgpBQUdqUWpCQU1BNEdBMVVkRHdFQi93UUVBd0lCcGpBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXCkJCUkxtNTVDK1VvVG9sSit1UGFLdWxMTjVsT3VzekFOQmdrcWhraUc5dzBCQVFzRkFBT0NBWUVBVjNtVXhVTkQKRDhkdHV3Mmk5UnFLMWRnZUVPK1JzRmdONnp5OWV4QjU3aHRDT0tMVXJZaHBXcVFsWUIzbktaZWJCMEo4b21hdwoyS0E1dGdrUUJNdW1zYkQwVEl3bUNpakNxU0J4TDJBZ2tKbXhnVExWbmdmeW14NURFdVIvaWw2SlJBUC9HZ2NvCndpSnlwSGtHRVFOdTZmRW1CbEZnVlQ3aFdENTVSSFdwSWJTOFhYd1JGTWlDa3E0NU1heVhGeGFBOUdVNFNhcmwKeDhsRXlTem1Ja0RTcm90V0pXM2lwVVZqM0IyR3BxandtdlFuL2Z4V2dadUdvVVd2NEp3Z2FYd2UzL3hOangvNQozMVlqTmZ1NllnejBHeUw4NEgwRlo4Ym5KWmszekNLcGd3L1JwZ2UxSFg1MVE5bnVkMW5SS1hwOThYZ0VnY1ExClJIeG5LU2ZqQUtPbVhmeFltQ1d0aHR6T1dZbldyTWllWWNqbFg1b2VML1h6NW80R2FPRWowUHJ6MWxFcFZvaGIKclU0bkRwV01xQ0xicTlYL3NJTFlGY2o4alduVUYxTUFmbWg4aUJJMEZqbnk3bGU3bkpRazJEd2c1MEY4eDNYUgpROGdKcE9od3NRSUJEOWtwWnNTN1liZU1LeEpHaWtLcGhMd0xQSUlTNmJzQ1BlejRTajFjcjk0cQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg=="
+              "server": "https://api.ca15e0c.kyma.ondemand.com"
+            "name": "garden-kyma--ca15e0c-external"
+          "contexts":
+          - "context":
+              "cluster": "garden-kyma--ca15e0c-external"
+              "user": "garden-kyma--ca15e0c-external"
+            "name": "garden-kyma--ca15e0c-external"
+          "current-context": "garden-kyma--ca15e0c-external"
+          "kind": "Config"
+          "users":
+          - "name": "garden-kyma--ca15e0c-external"
+            "user":
+              "exec":
+                "apiVersion": "client.authentication.k8s.io/v1"
+                "args":
+                - "-c"
+                - |
+                  set -e -o pipefail
+                  OIDC_URL_WITH_AUDIENCE="$ACTIONS_ID_TOKEN_REQUEST_URL&audience=gh-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e"
+                  IDTOKEN=$(curl -sS \
+                    -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+                    -H "Accept: application/json; api-version=2.0" \
+                    "$OIDC_URL_WITH_AUDIENCE" | jq -r .value)
+                  # Print decoded token information for debugging purposes
+                  echo ::debug:: JWT content: "$(echo "$IDTOKEN" | jq -c -R 'split(".") | .[1] | @base64d | fromjson')" >&2
+                  EXP_TS=$(echo $IDTOKEN | jq -R 'split(".") | .[1] | @base64d | fromjson | .exp')
+                  EXP_DATE=$(date -d @$EXP_TS --iso-8601=seconds)
+                  # return token back to the credential plugin
+                  cat << EOF
+                  {
+                    "apiVersion": "client.authentication.k8s.io/v1",
+                    "kind": "ExecCredential",
+                    "status": {
+                      "token": "$IDTOKEN",
+                      "expirationTimestamp": "$EXP_DATE"
+                    }
+                  }
+                  EOF
+                "command": "bash"
+                "interactiveMode": "Never"
+
+        "method": "kubeconfig"
+    - "name": "Deploy JupyterHub"
+      "run": |
+        helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
+        helm repo update
+        helm show values jupyterhub/jupyterhub > values.yaml
+        cat ./values.yaml
+        helm uninstall -n jupyter quovadis-jupyter --ignore-not-found
+        helm upgrade --cleanup-on-fail --install quovadis-jupyter jupyterhub/jupyterhub --namespace jupyter --create-namespace --values values.yaml
+    - "name": "check permissions"
+      "run": |
+        kubectl auth can-i --list --namespace quovadis-btp
+        kubectl get nodes
+        kubectl get pod -A
+        kubectl get -n kyma-system kymas default -o json | jq '.spec.modules[] '
+        kubectl get cm/shoot-info -n kube-system -o json | jq .data
+        kubectl get openidconnect
+        kubectl get cm/kyma-provisioning-info -n kyma-system -ojsonpath='{.data.details}'
+    - "name": "kyma cli 3.2.0"
+      "run": |
+        echo "Installing kyma cli..."
+        curl -sSL "https://github.com/kyma-project/cli/releases/download/3.2.0/kyma_Linux_x86_64.tar.gz" |  tar -xzv kyma
+        ./kyma --help
+        ./kyma alpha --help
+        echo "List of modules"
+        ./kyma module list
+        ./kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --cluster-wide --namespace default --permanent > kyma-cli-sa.yaml
+
+        echo "List of modules with  kyma-cli-sa"
+        ./kyma module list --kubeconfig ./kyma-cli-sa.yaml
+        echo "deploy a docker image and expose it via an API Rule v2"
+
+        kubectl delete all -l app.kubernetes.io/name=httpbin-app
+        ./kyma app push --name httpbin-app --image kennethreitz/httpbin --istio-inject true --expose --container-port 80
+    - "name": "Diagnose cluster health and configuration"
+      "run": |
+        echo "Get cluster metadata..."
+
+        ./kyma alpha diagnose -f json | jq -r '.metadata'
+    - "name": "Community Modules Support"
+      "run": |
+        echo "discover/add available community-driven modules..."
+
+        ./kyma module catalog
+    - "name": "kyma-oidc-0 (https://dashboard.kyma.cloud.sap/cluster)"
+      "run": |
+        echo "generate kubeconfig files..."
+
+        ./kyma alpha kubeconfig generate --oidc-name kyma-oidc-0 --output=kymacanary-oidc.yaml
+
+        cat kymacanary-oidc.yaml
+    - "name": "kymacanary-oidc (https://dashboard.kyma.cloud.sap/cluster)"
+      "run": |
+        echo "generate kubeconfig files..."
+
+        ./kyma alpha kubeconfig generate --oidc-name kymacanary-oidc --output=kymacanary-oidc.yaml
+
+        cat kymacanary-oidc.yaml
+    - "name": "kymaprod-oidc (https://dashboard.kyma.cloud.sap/cluster)"
+      "run": |
+        echo "generate kubeconfig files..."
+
+        ./kyma alpha kubeconfig generate --oidc-name kymaprod-oidc --output=kymaprod-oidc.yaml
+
+        cat kymaprod-oidc.yaml
+"name": "us-east-admin"
+"on":
+  "workflow_dispatch": null
+"permissions":
+  "contents": "read"
+  "id-token": "write"
