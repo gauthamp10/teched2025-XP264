@@ -111,7 +111,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-4-golden-signals.png" alt="overview" height="600"/></a></h1>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-4-golden-signals.png" alt="4-g-s" height="600"/></a></h1>
 </div>
 </td>
 </tr>
@@ -126,7 +126,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-usage.png" alt="overview" height="600"/></a></h1>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-usage.png" alt="usage" height="600"/></a></h1>
 </div>
 </td>
 </tr>
