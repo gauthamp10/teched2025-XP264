@@ -50,11 +50,16 @@ The requirements to follow the exercises in this repository are...
   installing the oidc-login plugin | |
   install view-serviceaccount-kubeconfig plugin | |
 
-  * Github actions (GHA). You may run the GHA-based exercises direclty from a browser on the laptop from your forked repository.  Alternatively, you may use VSCode terminal and other plugins you may be familiar with.
+  * Github actions (GHA). You may run the GHA-based exercises direclty from a browser on the laptop from your forked repository.  
+  * Alternatively, you may use VSCode on your teched laptop terminal and other plugins you may be familiar with.
 
-  * As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components like SAP Cloud Logging, SAP HANA Cloud and others.  
-    * All the SAP Kyma environments have been configured to the same template (via terraform automation).  
-    * Each SAP Kyma kubernetes cluster offers the same setup (with very minor differences)...
+  * As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components like 
+   - SAP Cloud Identity Services (SAP IAS), 
+   - SAP Cloud Logging, 
+   - SAP HANA Cloud,
+   - others.  
+  * All the SAP Kyma environments have been configured to the same template (via terraform automation).  
+
 
   * Last but not least, you will be able to *play* with a pre-deployed SAP Build multitenant application which follows BTP multitenancy paradigm.  
 
