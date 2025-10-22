@@ -35,6 +35,7 @@ jobs:
     steps:
     - name: CLUSTER_CONTEXT
       id: cluster_context
+      run: |
 
         CLUSTER_CONTEXT: |
             "${{ inputs.subaccount_name == 'uk-xp264' && 'garden-kyma--b84edf3-external'
