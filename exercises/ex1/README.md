@@ -68,6 +68,28 @@ Let's have a look at different kyma clusters through the lenses of the ready mad
 
 
 A hint: for the best user experience, please use the right click and open either Admin Workflow and/or Student Workflow links into a tab or a new window.  
+The ready made CI/CD workflows are to be manually triggered.  
+For instance:
+
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href="">
+<p float="left">
+  <img src="../ex1/images/japan-east--admin.png" width="400" height="800"/>
+  <img src="../ex1/images/japan-east--admin-summary.png" width="400" height="800"/> 
+  <img src="../ex1/images/japan-east--student.png" width="400" height="800"/>
+  <img src="../ex1/images/japan-east--student-summary.png" width="400" height="800"/> 
+</p>
+</a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
 
 
 
