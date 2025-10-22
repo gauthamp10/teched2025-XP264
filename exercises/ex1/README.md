@@ -67,6 +67,10 @@ Let's have a look at different kyma clusters through the lenses of the ready mad
  | [uk-xp264]() | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=0FD84322-535C-4047-89CE-47FC775938FC ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
 
 
+A hint: for the best user experience, please use the right click and open either Admin Workflow and/or Student Workflow links into a tab or a new window.  
+
+
+
 
 ## Exercise 1.2 - Zoom on Kyma CLI
 
