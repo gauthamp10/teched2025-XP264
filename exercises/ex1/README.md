@@ -350,6 +350,10 @@ Good to know:
 - That means students can retrieve and consume the subsciption in whatever tenant they like with their own user login.
 - All the subsciptions can be viewed from the subscription dashboard on the provider side...
 
+- if this is a first time subscription, plese goto the consumer tenant and disable the SAP IDS for user logon, as follows:
+
+
+
 ## Summary
 
 

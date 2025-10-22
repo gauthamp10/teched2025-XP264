@@ -67,8 +67,9 @@ output "platform_trust_origins" {
   value = local.platform_trust_origin
 }
 
-
-resource "btp_subaccount_role_collection_assignment" "subaccount_platform_idp_groups" {
+# Subaccount Administrator
+#
+resource "btp_subaccount_role_collection_assignment" "subaccount_platform_idp_admin_groups" {
 
   depends_on           = [btp_subaccount_trust_configuration.custom_idp]
 
@@ -79,13 +80,26 @@ resource "btp_subaccount_role_collection_assignment" "subaccount_platform_idp_gr
   origin               = length(local.platform_trust_origin) != 0 ? local.platform_trust_origin[0] : "anuk8cmfw-platform"
 }
 
+# Subaccount Viewer
+#
+resource "btp_subaccount_role_collection_assignment" "subaccount_platform_idp_viewer_groups" {
+
+  depends_on           = [btp_subaccount_trust_configuration.custom_idp]
+
+  for_each             = var.subaccount_id == "" ? toset( "${var.viewer_groups}" ) : toset([])
+  subaccount_id        = data.btp_subaccount.context.id
+  role_collection_name = "Subaccount Viewer"
+  group_name           = each.value
+  origin               = length(local.platform_trust_origin) != 0 ? local.platform_trust_origin[0] : "anuk8cmfw-platform"
+}
+
 
 # Assign users to Role Collection: subaccount emergency_admin (with sap.custom)
 #
 resource "btp_subaccount_role_collection_assignment" "subaccount_custom_idp_groups" {
   depends_on           = [btp_subaccount_subscription.faas_xp264_mt]
 
-  for_each             = var.subaccount_id == "" ?  toset( "${var.admin_groups}" ) : toset([])
+  for_each             = var.subaccount_id == "" ? concat( toset( "${var.admin_groups}" ), toset( "${var.viewer_groups}" ) ) : toset([])
   subaccount_id        = data.btp_subaccount.context.id
   role_collection_name = "faas-xp264-049_hc-faas"
   group_name            = each.value

@@ -7,5 +7,6 @@ module "mt_context" {
   BTP_CUSTOM_IDP     = var.BTP_CUSTOM_IDP
   BTP_SA_REGION      = var.BTP_SA_REGION
   admin_groups       = var.admin_groups
+  viewer_groups      = var.viewer_groups  
   subaccount_id      = var.subaccount_id
 }

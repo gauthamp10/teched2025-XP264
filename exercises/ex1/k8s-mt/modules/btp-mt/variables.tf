@@ -23,6 +23,11 @@ variable "admin_groups" {
   description = "Defines the platform IDP groups to be added to each subaccount as administrators."
 }
 
+variable "viewer_groups" {
+  type        = list(string)
+  description = "Defines the platform IDP groups to be added to each subaccount as viewers."
+}
+
 variable "subaccount_id" {
   type        = string
   description = "subaccount_id"
