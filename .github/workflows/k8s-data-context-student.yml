@@ -92,5 +92,5 @@ jobs:
     uses: ./.github/workflows/_k8s-data-context-student.yml
     with:
       NAMESPACE: ${{ matrix.namespace }}
-      CLUSTER_CONTEXT: ${{ env.cluster }}
+      CLUSTER_CONTEXT: ${{ env.CLUSTER_CONTEXT }}
       IDP: ${{ env.IDP }}
