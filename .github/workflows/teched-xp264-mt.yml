@@ -207,7 +207,7 @@ env:
         CONFIG_DIRECTORY: "./exercises/ex1/k8s-mt/"
         PATH_TO_TFSCRIPT: "./exercises/ex1/k8s-mt/"  
 
-    - name: Terraform Apply 
+    - name: Terraform Apply ##  -var subaccount_id=${{ steps.terraform_output_mt.outputs.btp_subaccount_id }} \
       id: terraform_apply
       shell: bash
       run: |
@@ -223,7 +223,6 @@ env:
         -var BTP_GLOBAL_ACCOUNT=${{env.GLOBALACCOUNT}} \
         -var BTP_CUSTOM_IDP=${{ env.IDP }} \
         -var BTP_SUBACCOUNT=${{ github.event.inputs.subaccount_name }} \
-#        -var subaccount_id=${{ steps.terraform_output_mt.outputs.btp_subaccount_id }} \
         -auto-approve -no-color
 
       env:
