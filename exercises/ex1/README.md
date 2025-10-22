@@ -50,12 +50,15 @@ Each Kyma Runtime instance is a separate Kubernetes cluster managed by the KCP. 
 </table>   
 
 
-## Exercise 1.2 - A blind date with SAP Kyma. Explore Kyma environment with the ready made automation
+## Exercise 1.2 - Explore Kyma runtime environment with the ready made automation flows
 
 - Does one always need to climb the mountain of the onboarding documentation?  
 - Well, not necessarily.  
 - A well-thought and designed landscape (Day-0/Day-1) would offer some built-in automation.  
 - Both with some CI/CD workflows and Terraform automation
+
+It's a bit like having blind date with SAP Kyma.  You are asked to run a few workflows that the Day-0/Day-1 team has designed and implemented.  
+These worklows act similarly to, for instance, electric probes providing the key information about the state of the runtime environment at a glance.  
 
 Let's have a look at different kyma clusters through the lenses of the ready made automation workflows...  
 
@@ -92,6 +95,23 @@ For instance:
 </tbody>
 </table> 
 
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href="https://dashboard.kyma.cloud.sap/?kubeconfigID=79EB720B-2C16-4A7E-AA7F-108C4E3B7E98">
+<p float="left">
+  <img src="../ex1/images/k8s-data-context-student.png" width="400" height="800"/>
+  <img src="../ex1/images/k8s-data-context-student-summary.png" width="400" height="800"/> 
+</p>
+</a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
 
 Good to know: 
 - The automated workflows leverage the dynamic OIDC credentials with Github acting as the IDP provider. 

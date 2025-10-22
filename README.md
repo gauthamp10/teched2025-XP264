@@ -76,7 +76,7 @@ The requirements to follow the exercises in this repository are...
 
   * [Exercise 1.0 - Let's talk SAP BTP, Kyma Runtime (SKR) architecture and its building blocks](exercises/ex1#exercise-10---lets-talk-sap-btp-kyma-runtime-skr-architecture)
   * [Exercise 1.1 - Easy access to your session landscape with SSO.](exercises/ex1#exercise-11---easy-access-to-your-teched-landscape-with-sso)
-  * [Exercise 1.2 - A blind date with SAP Kyma. Explore Kyma environment with the ready made automation](exercises/ex1#exercise-12---a-blind-date-with-sap-kyma-explore-kyma-environment-with-the-ready-made-automation)
+  * [Exercise 1.2 - Explore Kyma runtime environment with the ready made automation flows](exercises/ex1#exercise-12---a-blind-date-with-sap-kyma-explore-kyma-environment-with-the-ready-made-automation)
   * [Exercise 1.3 - Zoom on Kyma CLI](exercises/ex1#exercise-13---zoom-on-kyma-cli)
   * [Exercise 1.4 - Firefighter access to your kyma cluster](exercises/ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster)
   * [Exercise 1.5 - Getting to know your kyma cluster better](exercises/ex1#exercise-15---getting-to-know-your-kyma-cluster)
