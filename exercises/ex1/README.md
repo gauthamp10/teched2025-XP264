@@ -329,7 +329,7 @@ In order to subscribe or to retrieve an existing subscription for your session u
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://dashboard.kyma.cloud.sap/?kubeconfigID=79EB720B-2C16-4A7E-AA7F-108C4E3B7E98">
+<h1><a href="https://mt-xp264-001-teched-80a5defe.b84edf3.kyma.ondemand.com">
 <p float="left">
   <img src="../ex1/images/subscription-job.png" width="450" height="600"/>
   <img src="../ex1/images/subscription-manifest.png" width="450" height="600"/>
@@ -357,7 +357,7 @@ Good to know:
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://dashboard.kyma.cloud.sap/?kubeconfigID=79EB720B-2C16-4A7E-AA7F-108C4E3B7E98">
+<h1><a href="https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/1e722e67-9ec2-46de-a690-9a89e7a066ce">
 <p float="left">
   <img src="../ex1/images/Default-identity-provider.png" width="450" height="600"/>
   <img src="../ex1/images/Default-identity-provider-edit.png" width="450" height="600"/>
@@ -378,11 +378,11 @@ Good to know:
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://dashboard.kyma.cloud.sap/?kubeconfigID=79EB720B-2C16-4A7E-AA7F-108C4E3B7E98">
+<h1><a href="">
 <p float="left">
   <img src="../ex1/images/subscription-mgmt.png" width="450" height="600"/>
-  <img src="../ex1/images/subscription-mgmt-details.png" width="450" height="600"/>
-  <img src="../ex1/images/subscription-mgmt-dependencies.png" width="450" height="800"/> 
+  <img src="../ex1/images/subscription-mgmt-tenant-details.png" width="450" height="600"/>
+  <img src="../ex1/images/subscription-mgmt-tenant-dependencies.png" width="450" height="800"/> 
 </p>
 </a></h1>
 </div>
