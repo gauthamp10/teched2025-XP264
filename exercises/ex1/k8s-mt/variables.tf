@@ -37,8 +37,8 @@ variable "admin_groups" {
 
 variable "viewer_groups" {
   type        = list(string)
-  description = "Defines the platform IDP groups to be added to each subaccount as administrators."
-  default     = [XP264_INST","XP264"]
+  description = "Defines the platform IDP groups to be added to each subaccount as viewers."
+  default     = ["XP264_INST","XP264"]
 }
 
 variable "subaccount_id" {
