@@ -108,7 +108,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        namespace: ${{ github.event.inputs.NAMESPACE }}
+        namespace: [ "${{ github.event.inputs.NAMESPACE }}" ]
 
     uses: ./.github/workflows/_k8s-data-context-student.yml
     with:
