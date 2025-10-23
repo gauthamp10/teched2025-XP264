@@ -360,12 +360,13 @@ In order to subscribe or to retrieve an existing subscription for your session u
 
 Good to know:
 - There is a single subscription in each consumer tenant (a BTP subaccount)
-- All students users as a group can access each consumer tenant...
+- All students users as a group can access every subscription in each consumer tenant...
 - However, the access to the subscribed app is SSO-ringfenced...
-- That means students can retrieve and consume the subsciption in whatever tenant they like with their own user login.
 - All the subsciptions can be viewed from the subscription dashboard on the provider side...
+- The workflow can be used to unsubscribe. If you choose to do it, please make sure you use the allocated students name.
 
-- If this happens to be a first time subscription, plese goto the consumer tenant and disable the SAP IDS for user logon, as depicted below:
+
+- If this happens to be a first time subscription, please let me go the consumer tenant and disable the SAP IDS for user logon, as depicted below:
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
