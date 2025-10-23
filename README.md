@@ -82,8 +82,8 @@ The requirements to follow the exercises in this repository are...
   * [Exercise 1.2 - Explore Kyma runtime environment with the ready made automation flows](exercises/ex1#exercise-12---explore-kyma-runtime-environment-with-the-ready-made-automation-flows)
   * [Exercise 1.3 - Zoom on Kyma CLI](exercises/ex1#exercise-13---zoom-on-kyma-cli)
   * [Exercise 1.4 - Firefighter access to your kyma cluster](exercises/ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster)
-  * [Exercise 1.5 - Kyma diagnostic check](exercises/ex1#exercise-15---getting-to-know-your-kyma-cluster-better)
-  * [Exercise 1.6 - Multitenancy playground. Subscribe to a kyma multitenant application](exercises/ex1#exercise-16---btp-multitenancy-with-sap-kyma)
+  * [Exercise 1.5 - Kyma diagnostic check](exercises/ex1#exercise-15---kyma-diagnostic-check)
+  * [Exercise 1.6 - Multitenancy playground](exercises/ex1#exercise-16---subscribe-to-a-kyma-multitenant-application)
 
 
 * #### [Exercise 2 - Using External Scalers. Keda](exercises/ex12#exercise-2---first-things-first-getting-acquainted-with-sap-btp-kyma-runtime-skr)
