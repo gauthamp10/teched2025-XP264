@@ -26,6 +26,15 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 <div>
 <h1><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"><img class="aligncenter" src="exercises/ex0/images/kyma-runtime-stack.drawio.svg" alt="kyma stack" /></a></h1>
 </div>
+<div>
+```mermaid
+graph TD
+    A[SAP Kyma Runtime] --> B[Kyma modules]
+    B --> C[Gardener Kubernetes cluster]
+    C --> D[Hyperscaler project]
+```
+</div>
+
 </td>
 </tr>
 </tbody>
@@ -84,14 +93,6 @@ The requirements to follow the exercises in this repository are...
     ``` 
   - jq, curl. [kyma cli](https://github.com/kyma-project/cli/releases/download/3.2.0/kyma_Windows_x86_64.zip) 
 
-```mermaid
-graph TD
-    A[Client] --> B[Load Balancer]
-    B --> C[Web Server 1]
-    B --> D[Web Server 2]
-    C --> E[Database]
-    D --> E
-```
 
 ## [Let's get started...](exercises/ex0/)
 
