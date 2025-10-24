@@ -32,7 +32,7 @@ graph TD
     A[SAP Kyma Runtime] --> B[Kyma modules]
     B --> C[Gardener Kubernetes cluster]
     C --> D[Hyperscaler project]
-    A --> E[Kyma Control Plane]
+    A <-- E[Kyma Control Plane]
     A --> F[BTP Services]
 ```
 </p>
