@@ -41,33 +41,34 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 
 The requirements to follow the exercises in this repository are...
 
-  * You need to fork the repository. Thus, you may need to have a GitHub user.
+- You need to fork the repository. Thus, you may need to have a GitHub user.
   If you haven't got one yet, please [sign-up](exercises/ex0#exercise-00---sign-up-for-a-new-github-account) on GitHub before the workshop.
 
-  * Additional software tools (are pre-installed on your SAP TECHED 2025 Client laptops)  
+- As the session content is delivered exclusively on SAP-Samples github, many excercises have beeen implemented  as Github actions (GHA). 
+
+- You may run the GHA-based exercises directly from a browser from your forked repository on the teched laptop.
+  Alternatively, you may use VSCode on your teched laptop terminal and other plugins you may be familiar with.
+
+- As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components, for instance: 
+   - SAP Cloud Identity Services (SAP IAS), 
+   - SAP Cloud Logging, 
+   - SAP HANA Cloud,
+   - ArgoCDaaS,
+   - SAP BTP Connectivity services - Destination service, Connectivity service, Cloud Connector, Connectivity Proxy and Transparent Proxy
+   - S4/HANA On-premise (private cloud) with the Cloud Connector in the private network.
+
+- All of the SAP Kyma environments have been configured to the same template (via terraform automation).  
+
+- Last but not least, you will be able to *play* with a pre-deployed SAP Build multitenant application deployed to one of the kyma clusters.   
+
+- Additional software tools (are pre-installed on your SAP TECHED 2025 Client laptops)  
     
-  kubectl plugins | jq | [Kyma CLI for SAP BTP, Kyma Runtime] |
+  kubectl plugins | jq | Kyma CLI |
   -- | :--: | -- |
   install [krew.exe](https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew.exe) | install jq with `winget install jqlang.jq` | download [kyma cli](https://github.com/kyma-project/cli/releases/download/3.2.0/kyma_Windows_x86_64.zip) 
   installing the oidc-login plugin | |
   install view-serviceaccount-kubeconfig plugin | |
 
-  * As the session content is delivered exclusively on SAP-Samples github, many excercises have beeen implemented  as Github actions (GHA). 
-
-  You may run the GHA-based exercises direclty from a browser from your forked repository on a teched laptop.
-  * Alternatively, you may use VSCode on your teched laptop terminal and other plugins you may be familiar with.
-
-  * As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components, for instance: 
-     - SAP Cloud Identity Services (SAP IAS), 
-     - SAP Cloud Logging, 
-     - SAP HANA Cloud,
-     - ArgoCDaaS,
-     - SAP BTP Connectivity services - Destination service, Connectivity service, Cloud Connector, Connectivity Proxy and Transparent Proxy
-     - S4/HANA On-premise (private cloud) with the Cloud Connector in the private network.
-
-  * All of the SAP Kyma environments have been configured to the same template (via terraform automation).  
-
-  * Last but not least, you will be able to *play* with a pre-deployed SAP Build multitenant application deployed to one of the kyma clusters.   
 
 ## [Let's get started...](exercises/ex0/)
 
