@@ -24,7 +24,7 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"><img class="aligncenter" src="exercises/ex0/images/kyma-runtime-stack.drawio.svg" alt="kyma stack" /></a></h1>
+<h1><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"><img class="aligncenter" src="exercises/ex0/images/kyma-runtime-stack.drawio.svg" alt="kyma stack" height="800"/></a></h1>
 </div>
 <div>
 
@@ -33,7 +33,7 @@ graph TD
     A[SAP Kyma Runtime] --> B[Kyma modules]
     B --> C[Gardener Kubernetes cluster]
     C --> D[Hyperscaler project]
-    A --> E[Kyma Control Plane]
+    E[Kyma Control Plane] --> A
 ```
 </div>
 
