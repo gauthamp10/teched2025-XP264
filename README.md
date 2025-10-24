@@ -4,8 +4,8 @@
 
 This repository contains the material for the SAP TechEd 2025 session catalog number XP264 - [**Explore how to run cloud-native applications on SAP BTP, Kyma runtime.**](https://www.sap.com/events/teched/berlin/flow/sap/te25/catalog-inperson/page/catalog/session/1749035076180001oik0)  
 
-  * Day-2 Operations: Maintenance, Monitoring, and Optimization
-  * On-premise connectivity
+  * Day-2 Operations: Management, Maintenance, Monitoring, and Optimization
+  * Technical connectivity to public and private (on-premise) systems 
 
 ## Overview
 
@@ -60,11 +60,10 @@ The requirements to follow the exercises in this repository are...
      - SAP Cloud Logging, 
      - SAP HANA Cloud,
      - ArgoCDaaS,
-     - BTP Connectivity services,
-     - S4/HANA On-premise (private cloud) with SAP Cloud Connector in the private network.
+     - SAP BTP Connectivity services - Destination service, Connectivity service, Cloud Connector, Connectivity Proxy and Transparent Proxy
+     - S4/HANA On-premise (private cloud) with the Cloud Connector in the private network.
 
   * All of the SAP Kyma environments have been configured to the same template (via terraform automation).  
-
 
   * Last but not least, you will be able to *play* with a pre-deployed SAP Build multitenant application deployed to one of the kyma clusters.   
 
@@ -88,8 +87,7 @@ The requirements to follow the exercises in this repository are...
   * [Exercise 1.6 - Multitenancy playground](exercises/ex1#exercise-16---subscribe-to-a-kyma-multitenant-application)
 
 
-* #### [Exercise 2 - Using External Scalers. Keda](exercises/ex12#exercise-2---first-things-first-getting-acquainted-with-sap-btp-kyma-runtime-skr)
-
+* #### [Exercise 2 - Using External Scalers. Keda](exercises/ex2#exercise-2---use-external-scalers-keda)
 
 * #### [Exercise 3 - Explore Kyma Telemetry Features with SAP Cloud Logging](exercises/ex3#exercise-3---exploring-kyma-telemetry-with-sap-cloud-logging)
 
