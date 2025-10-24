@@ -84,14 +84,7 @@ Good to know:
  
 Furthermore:
 - The students do not have access to the master components of the landscape. 
-- Any shared asset access required for the session is granted via SSO with the links available from the Easy Navigation site.
-
-| Account Name              | Type        |                                                                                                                                Description |
-| :------------------------ | :---------: | :------------------------------------------------------------------------------------------------------------------------ |
-| btp-argocd                |  Session Master  | with a shared ArgoCD instance (with SSO for all participants)             |
-| btp-bootstrap             |  Session Master  | XP264 session bootstrap context for the terraform automation. |
-| btp-provider              |  Session Master  | with shared SAP HANA Cloud and Cloud Logging (SAML SSO) services instances.|
-
+- Any shared component access required for the session is granted via SSO with the links available from the Easy Navigation site.
 
 
 
