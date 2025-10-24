@@ -94,7 +94,6 @@ sequenceDiagram
     Note left of Kyma Region (BTP Cockpit): Pick a region<br/>and action<br/>of your choice.
     Note left of Admin Worklow (cluster-wide): Choose a workflow<br/>and open it<br/>with the right click.
 
-
 ```
 
 </div>
@@ -128,7 +127,7 @@ Explanation. What has happened?
   * kubernetes provider 
   * kubectl provider
 
-👉 Inspect the steps of each of the worklow you have run, as depicted below:
+👉 Inspect the steps of each of the worklow you have run, for instance:
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
@@ -164,10 +163,10 @@ Explanation. What has happened?
 
 
 Good to know:
-- The security is paramount!
-- The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the OIDC token provider in the context of a running job.
-- Thus, there is no need to rely on static credentials or be compelled to use a vault.
-- The implemented mechanism ensures the credentials are rotated automatically which makes it suitable for long running pipelines as well.
+- The security is paramount!  
+- The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the OIDC token provider in the context of a running job.  
+- Thus, there is no need to rely on static credentials or be compelled to use a vault.  
+- The implemented mechanism ensures the credentials are rotated automatically which makes it suitable for long running pipelines as well.  
 - In a nutshell, the automation workflows: 
   - 🔐 leverage GitHub's OIDC token for secure authentication
   - ⚙️ set up your Kubernetes kubeconfig with single or multiple contexts
