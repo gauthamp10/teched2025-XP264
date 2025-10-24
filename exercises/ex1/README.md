@@ -106,42 +106,8 @@ sequenceDiagram
 </table>  
 
 
+- 👉 For the best experience, do open workflow links into a separate tab or into a new window (right click).  
 
-
-
- | Kyma Region (BTP Cockpit) |  Console (dashboard) | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
- | :---------  | --------- | :--------- | :------- | -----------
- | [uk-south](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/4457fb7f-3296-40cf-b66b-aac3d9d4a2b2) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=6D0AF763-179E-4F84-8ED0-724B3C0C2C92) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [japan-east](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/cae18034-657b-478d-89f7-b802b8111cd0) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=79EB720B-2C16-4A7E-AA7F-108C4E3B7E98 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [us-east](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/831741eb-0b10-4d2c-9feb-c49afec286f5) | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=72A4A32B-0D0A-47DE-90C9-A65D52C8ADBE) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [xp264-000](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/20b6061c-64aa-4397-bc01-df7348704173) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=B427F082-0D0C-4657-9D99-56629CC03CF6 ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- | [uk-xp264]() | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=0FD84322-535C-4047-89CE-47FC775938FC ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-
-
-Good to know:
-
-  Any automation workflow above can connect to Kubernetes clusters using OpenID Connect (OIDC) tokens, instead of storing long-lived or even static credentials.
-
-  What is happening ?
-  -------------
-  These workflows do automatically:  
-
-  - 🔐 Use GitHub's OIDC token for secure authentication
-  - ⚙️ Set up your Kubernetes context (kubeconfig)
-  - 🚀 Enable you to run kubectl commands in your workflow
-  - 🚀 Enable you to run kyma cli commands in your workflow
- - 🚀 Enable you to run terraform automation in your workflow
-
-  **Benefits:**
-
-  - ✅ No need to store Kubernetes credentials as secrets
-  - ✅ Enhanced security through short-lived tokens
-  - ✅ Automatic token rotation
-  - ✅ Fine-grained access control
-
-📖 Learn more: [Using GitHub Actions OpenID Connect in Kubernetes](https://blogs.sap.com/2022/09/23/using-github-actions-openid-connect-in-kubernetes/)
-
-- For the best experience, please open workflow links into a separate tab or into a new window (right click).  
 - Diagnostic data collection from kyma clusters is done using both Kyma CLI and with several Terraform providers, namely:
   * SAP BTP TF provider
   * kubernetes provider 
@@ -192,13 +158,32 @@ Good to know:
 
 Good to know: 
 - The security is paramount!
-- The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the IDP provider in the context of a running job. 
+- The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the OIDC token provider in the context of a running job. 
 - Thus, there is no need to rely on static credentials or be compelled to use a vault.
 - The implemented mechanism ensures the credentials are rotated automatically which makes is suitable for long running pipelines as well.
 
+What is happening ?
+  -------------
+  These workflows automatically:  
 
-Takeaway:
-- Think about nny additional cluster information you might like to add or amend...
+  - 🔐 use GitHub's OIDC token for secure authentication
+  - ⚙️ set up your Kubernetes context (kubeconfig)
+  - 🚀 enable you to run kubectl commands in your workflow
+  - 🚀 enable you to run kyma cli commands in your workflow
+  - 🚀 enable you to run terraform automation in your workflow
+
+  **Benefits:**
+
+  - ✅ No need to store Kubernetes credentials as secrets
+  - ✅ Enhanced security through short-lived tokens
+  - ✅ Automatic token rotation
+  - ✅ Fine-grained access control
+
+📖 Learn more: [Using GitHub Actions OpenID Connect in Kubernetes](https://blogs.sap.com/2022/09/23/using-github-actions-openid-connect-in-kubernetes/)
+
+
+Excercise takeaways:
+- Think about any additional cluster information you might like to add or amend...
 
 ## Exercise 1.3 - Zoom on Kyma CLI
 
