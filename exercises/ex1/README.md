@@ -44,7 +44,7 @@ Some of the modules are added by default (istio, api-gateway and btp-operator), 
 <tbody>
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
-<div>
+<div> 
 <h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/site_navigation.png" alt="" height="600"/></a></h1>
 </div>
 </td>
@@ -67,12 +67,14 @@ In this exercise you will:
 - 👉 Retrieve the key information about the state of the runtime environment... at a glance.  
 - 👉 Both securely and effortlessly!
 
-Do it yourself...  
+
 The pre-configured CI/CD automation workflows are to be manually triggered. 
-They come as:
+They come in three different flavors, namely as:
 * admin (cluster-wide) 
 * students (namespaced)   
 * data collection (namespaced) workflows.
+
+Time to do it yourself...  
 - 👉 Pick a region and action of your choice...
 - 👉 Trigger the workflow...
 - 👉 Inspect the steps of each workflow...
