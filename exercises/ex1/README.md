@@ -74,9 +74,7 @@ These automations are like fuel to your kubernetes engines and environments.
 <tbody>
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
-<div>
-<h1><a href=""><img class="aligncenter" src="../ex1/images/engine_fuel.jpg" alt="engine_fuel" height="400" /></a></h1>
-</div>
+
 <div>
 
 ```mermaid
