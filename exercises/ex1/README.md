@@ -55,6 +55,18 @@ Some of the modules are added by default (istio, api-gateway and btp-operator), 
 
 ## Exercise 1.2 - Built-in github actions automation flows
 
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="../ex1/images/engine_fuel.jpg" alt="" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>  
+
 Does one always need to climb the mountain of the onboarding documentation? Not necessarily.  
 A well-thought and designed landscape (Day-0/Day-1) would offer some built-in automation.  
 this landscape features several pre-configured CI/CD github action workflows and Terraform automation.
