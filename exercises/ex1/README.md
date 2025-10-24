@@ -86,8 +86,8 @@ These automations are like fuel to your kubernetes engines and environments
 ```mermaid
 sequenceDiagram
     Kyma Region (BTP Cockpit) ->> Admin Worklow (cluster-wide): Hello Bob, how are you?
-    Admin Worklow (cluster-wide)-->>Student Workflow (namespaced): How about you John?
-    Student Workflow (namespaced)--x Data Collection Workflow (namespaced): I am good thanks!
+    Kyma Region (BTP Cockpit)-->>Student Workflow (namespaced): How about you John?
+    SKyma Region (BTP Cockpit)--x Data Collection Workflow (namespaced): I am good thanks!
     Note right of Kyma Region (BTP Cockpit): Pick a region<br/>and action<br/>of your choice.
 
 ```
