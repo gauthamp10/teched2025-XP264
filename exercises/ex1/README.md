@@ -38,7 +38,7 @@ config:
   themeVariables:
     primaryColor: "#00ff00"
   securityLevel: "loose"
-  mermaidZoom = false
+  mermaidZoom: false
 ---
 
 sequenceDiagram
