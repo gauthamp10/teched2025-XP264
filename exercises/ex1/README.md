@@ -163,8 +163,7 @@ sequenceDiagram
 ```
 ```mermaid
 ---
-title: <my title>
-
+title: my title
 config:
   theme: base
   themeVariables:
