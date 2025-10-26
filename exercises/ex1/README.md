@@ -134,8 +134,7 @@ config:
   theme: base
   themeVariables:
     primaryColor: "#00ff00"
-params:
-  mermaidInitialize: '{ "securityLevel": "loose" }'
+  securityLevel: "loose"
 ---
 
 graph TD
