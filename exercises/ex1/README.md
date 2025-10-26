@@ -169,11 +169,17 @@ config:
   themeVariables:
     primaryColor: "#00ff00"
   securityLevel: "loose"
+  layout: elk
 ---
 
 flowchart TD
-   n1["This is sample label"]
-   n1@{ img: "../landscape/uksouth/kyma-dashboard_url_uksouth.png", w="75", pos="b" }
+  n1["This is sample label"]
+  n2["This is sample label"]
+  n1@{ img: "https://static.mermaidchart.dev/whiteboard/default-image-shape.png"}
+  n2@{ img: "../landscape/uksouth/kyma-dashboard_url_uksouth.png"}
+
+
+
 ```
 </p>
 </div>
