@@ -36,10 +36,6 @@ graph TD
     F[BTP Services] --> A
 ```
 
-```mermaid
-{{< figure src="https://kubernetes.io/images/docs/components-of-kubernetes.svg" alt="Kubernetes pod running inside a cluster" class="diagram-large" caption="Figure 10. Kubernetes Architecture." link="https://kubernetes.io/docs/concepts/overview/components/" >}}
-```
-
 </p>
 </div>
 </td>
