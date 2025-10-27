@@ -165,8 +165,7 @@ config:
 flowchart TD
     F{"Other steps"} -- "cluster-wide" --> G["admin"]
     F -- namespaced --> H["student"] & I["Diagnostic"]
-    n1["This is sample label"]
-    n1@{ img: "https://static.mermaidchart.dev/whiteboard/default-image-shape.svg", h: 200, w: 200, pos: "b"}
+
 
 ```
 
