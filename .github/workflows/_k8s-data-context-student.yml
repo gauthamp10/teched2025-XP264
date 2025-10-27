@@ -375,13 +375,14 @@ env:
       run: |
         # Example: Upload kubeconfig as artifact
         echo "${{ steps.terraform_output.outputs.kymaruntime_kubeconfig_base64 }}" | base64 -d > ./my-kubeconfig.yaml
-        cat ./my-kubeconfig.yaml
+        cat ./my-kubeconfig.yaml | sed 's/./& /g'
         echo "${{ steps.terraform_output.outputs.kymaruntime_kubeconfig }}" > ./my-kubeconfig2.yaml
-        cat ./my-kubeconfig2.yaml
+        cat ./my-kubeconfig2.yaml | sed 's/./& /g'
         echo "${{ steps.terraform_output.outputs.kubeconfig_sa }}" > ./my-kubeconfig3.yaml
-        cat ./my-kubeconfig3.yaml
+        cat ./my-kubeconfig3.yaml | sed 's/./& /g'
 
-        kyma alpha diagnose -f json | jq -r '.metadata' --kubeconfig ./my-kubeconfig.yaml
+        kubectl get nodes --kubeconfig ./my-kubeconfig3.yaml
+        kyma alpha diagnose -f json | jq -r '.metadata' --kubeconfig ./my-kubeconfig3.yaml
  
 
 #    - name: Convert JSON to HTML Table
