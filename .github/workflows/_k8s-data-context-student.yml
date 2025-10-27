@@ -343,13 +343,13 @@ env:
         #terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} state list
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
 
-        kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)
-        terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters > ./tf_output.json
-        kyma_parameters=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters | jq -R)
-        echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
+        #kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)
+        #terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters > ./tf_output.json
+        #kyma_parameters=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters | jq -R)
+        #echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
 
-        kymaruntime_kubeconfig_base64=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kymaruntime_kubeconfig_base64)
-        echo $kymaruntime_kubeconfig_base64
+        #kymaruntime_kubeconfig_base64=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kymaruntime_kubeconfig_base64)
+        #echo $kymaruntime_kubeconfig_base64
 
         #echo "kymaruntime_kubeconfig_base64=$kymaruntime_kubeconfig_base64" >> $GITHUB_OUTPUT
         #echo  -e "$kymaruntime_kubeconfig_base64" | base64 -d
