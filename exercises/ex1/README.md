@@ -124,15 +124,16 @@ They come in three different flavors, namely as:
 * data collection workflows (namespaced).
 
 
+
 <table>
 <tr>
-<td> Github automation workflow sequence </td> <td> admin -- student -- checks </td>
+<td> Github automation workflow </td> <td> Sequence diagram                                  </td>
 </tr>
 <tr>
+<td> common steps </td>
 <td>
-
+ 
 ```mermaid
-
 ---
 title: Github automation workflow sequence
 config:
@@ -162,16 +163,14 @@ sequenceDiagram
   helm ->> kube: create kubeconfig
   kube ->> check: permissions check
   check ->> other: admin<br>student<br>diagnostics
-
 ```
 </td>
 </tr>
 <tr>
-<td> admin -- student -- checks </td>
+<td> other steps </td>
 <td>
-
+ 
 ```mermaid
-
 ---
 config:
   theme: base
@@ -180,18 +179,14 @@ config:
 flowchart TD
     F{"Other steps"} -- "cluster-wide" --> G["admin"]
     F -- namespaced --> H["student"] & I["Diagnostic"]
-
-
 ```
-
 </td>
 </tr>
 </table>
 
 
 
-
-<table style="width: 100%;  border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<table style="width: 100%; max-width:100%; table-layout: fixed; overflow:auto; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
