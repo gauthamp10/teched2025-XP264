@@ -123,7 +123,7 @@ They come in three different flavors, namely as:
 * students workflows (namespaced)   
 * data collection workflows (namespaced).
 
-
+<!-- 
 
 <table>
 <tr>
@@ -163,6 +163,7 @@ sequenceDiagram
   kube ->> check: permissions check
   check ->> other: admin<br>student<br>diagnostics
 ```
+
 </div>
 </td>
 </tr>
@@ -177,14 +178,15 @@ config:
   look: classic
 ---
 flowchart TD
-    F{"Other steps"} -- "cluster-wide" --> G["admin"]
-    F -- namespaced --> H["student"] & I["Diagnostic"]
+    F{"Other steps"} -- "cluster-wide" -> G["admin"]
+    F -- namespaced -> H["student"] & I["Diagnostic"]
 ```
+
 </td>
 </tr>
 </table>
 
-
+--->
 
 <table style="width: 100%; max-width:100%; table-layout: fixed; overflow:auto; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
