@@ -44,12 +44,11 @@ After a little while the HPA will be up and running:
 > [!NOTE]
 >```rust
 > kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml                                             
-
 > NAME       REFERENCE           TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
 > faas-srv   Function/faas-srv   cpu: <unknown>/50%   5         10        0          11s
-
+>```
+>```rust
 > kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
-
 > NAME       REFERENCE           TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
 > faas-srv   Function/faas-srv   cpu: 3%/50%   5         10        5          93s
 >```
