@@ -8,8 +8,9 @@ You must have a personal github account for this session.
 > [!IMPORTANT]
 > You must be able to fork the repository and activate the github actions at the fork. This is mandatory in order to be able to follow the exercises in this session!
 
-Thus, you may need a GitHub user.  
-If you haven't got one yet, please sign up for a new Github account following the instructions below.
+> [!TIP
+> Thus, you may need a GitHub user.  
+> If you haven't got one yet, please sign up for a new Github account following the instructions below.
 
 - 👉 Navigate to [GitHub](https://github.com/).
 - 👉 Click **Sign up for Github**.
