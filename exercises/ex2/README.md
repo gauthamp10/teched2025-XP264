@@ -24,7 +24,7 @@ As shown below, no HPA in place yet:
 >```rust
 >kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
 >```
-> Error from server (NotFound): horizontalpodautoscalers.autoscaling "faas-srv" not found
+> `Error from server (NotFound): horizontalpodautoscalers.autoscaling "faas-srv" not found`
 
 
 - step2:
@@ -34,22 +34,25 @@ Scale-out to 5 replicas
 >```rust
 > kubectl autoscale function faas-srv  -n xp264-050 --cpu-percent=50 --min=5 --max=10 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
 >```
-> horizontalpodautoscaler.autoscaling/faas-srv autoscaled
+> `horizontalpodautoscaler.autoscaling/faas-srv autoscaled`
 
 
 - step3:  
 
 After a little while the HPA will be up and running:  
-s
-```
-kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml                                             
-NAME       REFERENCE           TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
-faas-srv   Function/faas-srv   cpu: <unknown>/50%   5         10        0          11s
 
-kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
-NAME       REFERENCE           TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
-faas-srv   Function/faas-srv   cpu: 3%/50%   5         10        5          93s
-```
+> [!NOTE]
+>```rust
+> kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml                                             
+
+> NAME       REFERENCE           TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
+> faas-srv   Function/faas-srv   cpu: <unknown>/50%   5         10        0          11s
+
+> kubectl get hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
+
+> NAME       REFERENCE           TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+> faas-srv   Function/faas-srv   cpu: 3%/50%   5         10        5          93s
+>```
 
 - step4:
 scale down from 5 to 2 replicas by editiong the `horizontalpodautoscaler.autoscaling/faas-srv` resource
