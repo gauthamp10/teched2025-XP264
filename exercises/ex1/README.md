@@ -494,7 +494,7 @@ That's extremely convient as it allows to explore the gathered information at an
 It could be, for instance, shared with the SAP Kyma support.
 
 
-- 👉 RLet's capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
+- 👉 Let's capitalize on the student diagnostic github action that provides a service account based kubeconfig as an artifact, as follows:
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -508,6 +508,165 @@ It could be, for instance, shared with the SAP Kyma support.
 </tr>
 </tbody>
 </table> 
+
+
+- 👉 run: `export KUBE_CONFIG_PATH=~/Downloads/kubeconfig_sa/my-kubeconfig_sa.yaml`
+- 👉 run: `terraform workspace list`
+
+```
+│ Error: Backend initialization required, please run "terraform init"
+│ 
+│ Reason: Initial configuration of the requested backend "kubernetes"
+│ 
+│ The "backend" is the interface that Terraform uses to store state,
+│ perform operations, etc. If this message is showing up, it means that the
+│ Terraform configuration you're using is using a custom configuration for
+│ the Terraform backend.
+│ 
+│ Changes to backend configurations require reinitialization. This allows
+│ Terraform to set up the new configuration, copy existing state, etc. Please run
+│ "terraform init" with either the "-reconfigure" or "-migrate-state" flags to
+│ use the current configuration.
+│ 
+│ If the change reason above is incorrect, please verify your configuration
+│ hasn't changed and try again. At this point, no changes to your existing
+│ configuration or state have been made.
+╵
+```
+
+- 👉 run: `terraform init`
+
+```       
+Initializing the backend...
+
+Successfully configured the backend "kubernetes"! Terraform will automatically
+use this backend unless the backend configuration changes.
+Initializing modules...
+- k8s_context in modules/k8s
+Initializing provider plugins...
+- Finding latest version of massdriver-cloud/jq...
+- Finding salrashid123/http-full versions matching "1.3.1"...
+- Finding latest version of hashicorp/kubernetes...
+- Finding latest version of alekc/kubectl...
+- Finding latest version of hashicorp/local...
+- Finding latest version of hashicorp/http...
+- Finding latest version of jackivanov/qrcode...
+- Finding latest version of sap/btp...
+- Installing hashicorp/local v2.5.3...
+- Installed hashicorp/local v2.5.3 (signed by HashiCorp)
+- Installing hashicorp/http v3.5.0...
+- Installed hashicorp/http v3.5.0 (signed by HashiCorp)
+- Installing jackivanov/qrcode v1.0.0...
+- Installed jackivanov/qrcode v1.0.0 (self-signed, key ID 13FBA8C4DFF15EE4)
+- Installing sap/btp v1.17.0...
+- Installed sap/btp v1.17.0 (self-signed, key ID 270FEB6EE486FEBF)
+- Installing massdriver-cloud/jq v0.2.1...
+- Installed massdriver-cloud/jq v0.2.1 (self-signed, key ID 6758F1FC1D4FE114)
+- Installing salrashid123/http-full v1.3.1...
+- Installed salrashid123/http-full v1.3.1 (self-signed, key ID 97341836616BF511)
+- Installing hashicorp/kubernetes v2.38.0...
+- Installed hashicorp/kubernetes v2.38.0 (signed by HashiCorp)
+- Installing alekc/kubectl v2.1.3...
+- Installed alekc/kubectl v2.1.3 (self-signed, key ID 772FB27A86DAFCE7)
+Partner and community providers are signed by their developers.
+If you'd like to know more about provider signing, you can read about it here:
+https://www.terraform.io/docs/cli/plugins/signing.html
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+```
+
+- 👉 run: `terraform workspace list`
+```
+* default
+  k8s-context-xp264-050-c1f19148-71f7-4883-9f86-8d5ee7634dec
+  k8s-context-xp264-050-xp264-050
+```
+
+- 👉 run: `terraform workspace select k8s-context-xp264-050-xp264-050`
+`Switched to workspace "k8s-context-xp264-050-xp264-050".`
+
+
+- 👉 run: `terraform output`
+```
+KymaModules = [
+  {
+    "api" = "operator.kyma-project.io/v1alpha1"
+    "channel" = "regular"
+    "fqdn" = "kyma-project.io/module/api-gateway"
+    "name" = "api-gateway"
+    "state" = "Ready"
+    "version" = "3.2.3"
+  },
+  {
+    "api" = "operator.kyma-project.io/v1alpha2"
+    "channel" = "regular"
+    "fqdn" = "kyma-project.io/module/istio"
+    "name" = "istio"
+    "state" = "Ready"
+    "version" = "1.22.1"
+  },
+  {
+    "api" = "operator.kyma-project.io/v1alpha1"
+    "channel" = "regular"
+    "fqdn" = "kyma-project.io/module/btp-operator"
+    "name" = "btp-operator"
+    "state" = "Ready"
+    "version" = "1.2.19"
+  },
+  {
+    "api" = "operator.kyma-project.io/v1alpha1"
+    "channel" = "regular"
+    "fqdn" = "kyma-project.io/module/serverless"
+    "name" = "serverless"
+    "state" = "Ready"
+    "version" = "1.8.4"
+  },
+  {
+    "api" = "connectivityproxy.sap.com/v1"
+    "channel" = "regular"
+    "fqdn" = "kyma-project.io/module/connectivity-proxy"
+    "name" = "connectivity-proxy"
+    "state" = "Ready"
+    "version" = "1.1.2"
+  },
+  {
+    "api" = "operator.kyma-project.io/v1alpha1"
+    "channel" = "regular"
+    "fqdn" = "kyma-project.io/module/keda"
+    "name" = "keda"
+    "state" = "Ready"
+    "version" = "1.8.2"
+  },
+  {
+    "api" = "operator.kyma-project.io/v1alpha1"
+    "channel" = "regular"
+    "fqdn" = "kyma-project.io/module/transparent-proxy"
+    "name" = "transparent-proxy"
+    "state" = "Ready"
+    "version" = "1.8.8"
+  },
+  {
+    "api" = "operator.kyma-project.io/v1alpha1"
+    "channel" = "regular"
+    "fqdn" = "kyma-project.io/module/telemetry"
+    "name" = "telemetry"
+    "state" = "Ready"
+    "version" = "1.49.0"
+  },
+]
+```
 
 - 👉 Run the Data Collection Workflow
 
