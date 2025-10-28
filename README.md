@@ -170,6 +170,9 @@ The requirements to follow the exercises in this repository are...
 
 
 ----------------------------  
+
+## Additional resources
+
 - SAP Kyma in Developers Tutorial Navigator: [here](https://developers.sap.com/tutorial-navigator.html?search=kyma).  
 - SAP Kyma runtime samples: [here](https://github.com/SAP-samples/kyma-runtime-samples)
 
