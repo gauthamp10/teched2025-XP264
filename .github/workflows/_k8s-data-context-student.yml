@@ -451,9 +451,6 @@ env:
         kyma alpha diagnose -f json --kubeconfig ./my-kubeconfig_sa.yaml | jq -r '.metadata' 
  
     - name: Upload kubeconfigs to Artifacts
-      run: |
-        ls -al ./
-        pwd       
       uses: actions/upload-artifact@v4
       with:
         name: kubeconfig_sa
