@@ -292,14 +292,15 @@ Explanation. What has happened?
 > - Thus, there is no need to have any static credentials or be compelled to use a vault.  
 > - The implemented mechanism ensures the credentials are rotated automatically which makes it suitable for long running pipelines as well.  
 
-- In a nutshell, the automation workflows: 
+**In a nutshell, the automation workflows:**
+
   - 🔐 leverage GitHub's OIDC token for secure authentication
   - ⚙️ set up your Kubernetes kubeconfig with single or multiple contexts
   - 🚀 enable you to run kubectl commands in your workflow
   - 🚀 enable you to run kyma cli commands in your workflow
   - 🚀 enable you to run terraform automation flows in your workflow
 
-  **Benefits:**
+**Benefits:**
 
   - ✅ No need to store Kubernetes credentials as secrets
   - ✅ Enhanced security through short-lived tokens
