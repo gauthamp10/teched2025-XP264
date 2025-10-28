@@ -467,7 +467,8 @@ You can initially download the kubeconfig from one of the links below or directl
 Good to know:  
 - Relying on a user-OIDC kubeconfig is not very convenient due to the periodic redirects that may cause timeouts, even in a terminal window.
 
-- 👉 Let's create a permenent or temporary service account based kubeconfig (with uk-south)
+Practice:
+- 👉 Create a permenent or temporary service account based kubeconfig (with uk-south)
 - 👉 Choose the uk-south tile or click on the provided deep link
 
 ```
