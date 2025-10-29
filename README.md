@@ -26,9 +26,9 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 <td style="width: 71.6%; height: 193px;">
 <div>
 
-In a nutshell, SAP BTP, Kyma Runtime (SKR) is a managed offering of a Kubernetes Cluster based on Gardener, extended by a set of building blocks called **Kyma modules**.  
-The idea being that each instance of SAP BTP Kyma runtime environment is a separate Kubernetes cluster with its own set of modules.  
-All these clusters are managed by a central Kyma Control Plane (KCP) that orchestrates the lifecycle of 
+In a nutshell, SAP BTP, Kyma Runtime (SKR) is a managed runtime environment with a kubernetes cluster based on Gardener and a set of building blocks called Kyma modules. 
+As a result, each instance of SAP BTP Kyma runtime environment is a single k8s gardener cluster with its own set of kyma modules.
+All these kubernetes clusters are managed by a central Kyma Control Plane (KCP) that orchestrates the lifecycle of 
  - the underlying hyperscaler project, 
  - the Gardener Cluster, 
  - and the Kyma modules.
@@ -83,8 +83,8 @@ The requirements to follow the exercises in this repository are...
 > [!IMPORTANT]
 > The session content is provided *exclusively* on the SAP-Samples github, and many excercises have been implemented as CI/CD [Github Actions worflows](https://docs.github.com/en/actions/get-started/understand-github-actions) (GHA). 
 
-> [!TIP]
-> Security is paramount. With the Github Action IDP-delegated flow, there is no more need to provide kubernetes and btp credentials when using [github actions](https://docs.github.com/en/actions/concepts/security/openid-connect#benefits-of-using-oidc). 
+> [!IMPORTANT]
+> Security is paramount. With the Github Action IDP-delegated authentication flow, there is no more need to provide kubernetes and btp terraform provider credentials when using [github actions](https://docs.github.com/en/actions/concepts/security/openid-connect#benefits-of-using-oidc). 
   - ✅ The Github Action workflows acting as the [OIDC provider](https://docs.github.com/en/actions/concepts/security/openid-connect). 
   - ✅ All the kubernetets environments in the landscape are configured to trust GitHub’s token identity provider. They come with the pre-configured OIDC applications leveraging the built-in Gardener OIDC shoot extension.
   - ✅ SAP Cloud Identity Services acting as a platform IDP on the BTP side of the house has been federated with the Github actions OIDC Provider
