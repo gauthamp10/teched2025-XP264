@@ -292,20 +292,22 @@ Explanation. What has happened?
 > - Thus, there is no need to have any static credentials or be compelled to use a vault.  
 > - The implemented mechanism ensures the credentials are rotated automatically which makes it suitable for long running pipelines as well.  
 
-**In a nutshell, the automation workflows:**
 
-  - 🔐 leverage GitHub's OIDC token for secure authentication
-  - ⚙️ set up your Kubernetes kubeconfig with single or multiple contexts
-  - 🚀 enable you to run kubectl commands in your workflow
-  - 🚀 enable you to run kyma cli commands in your workflow
-  - 🚀 enable you to run terraform automation flows in your workflow
-
-**Benefits:**
-
-  - ✅ No need to store Kubernetes credentials as secrets
-  - ✅ Enhanced security through short-lived tokens
-  - ✅ Automatic token rotation
-  - ✅ Fine-grained access control
+> [!NOTE]
+> **In a nutshell, the automation workflow offer the following features and benefits:**
+>
+>  - 🔐 built-in GitHub's OIDC token trust for secure authentication
+>  - ⚙️ easy setup of your Kubernetes kubeconfig with a single or multiple cluster contexts
+>  - 🚀 can run kubectl commands in your workflow
+>  - 🚀 can run kyma cli commands in your workflow
+>  - 🚀 can run terraform automation flows in your workflow
+>
+> **Benefits:**
+>
+>  - ✅ No need to store Kubernetes credentials as secrets
+>  - ✅ Enhanced security through short-lived tokens
+>  - ✅ Automatic token rotation
+>  - ✅ Fine-grained access control
 
 📖 Learn more: [Using GitHub Actions OpenID Connect in Kubernetes](https://blogs.sap.com/2022/09/23/using-github-actions-openid-connect-in-kubernetes/)
 
