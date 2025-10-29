@@ -27,7 +27,9 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 <div>
 
 In a nutshell, SAP BTP, Kyma Runtime (SKR) is a managed runtime environment with a kubernetes cluster based on Gardener and a set of building blocks called Kyma modules.  
+
 As a result, each instance of SAP BTP Kyma runtime environment is a single k8s gardener cluster with its own set of kyma modules.  
+
 All these kubernetes clusters are managed by a central Kyma Control Plane (KCP) that orchestrates the lifecycle of 
  - the underlying hyperscaler project, 
  - the Gardener Cluster, 
@@ -49,6 +51,7 @@ flowchart TD
 
     style B stroke-width:4px,stroke-dasharray: 0
     style subGraph0 stroke:#616161
+    click subGraph0 "https://help.sap.com/docs/btp/sap-business-technology-platform/basic-concepts"
     click C "https://gardener.cloud/"
     click D "https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"
     click F "https://discovery-center.cloud.sap/viewServices"
