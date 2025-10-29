@@ -314,7 +314,7 @@ Explanation. What has happened?
 
 
 Principal excercise takeaways:
-- The automation workflows offer ease of use with the emphasis on security and on lowering the cost of the run with Day-2 operations
+- The automation workflows provide ease of use with the emphasis on both security and on lowering the cost of the run with the Day-2 operations
 - The Day-1 auto-generated automation workflows templates facilitate the Day-2 operations and allow for targeted extensions of the built-in flows.
 
 ## Exercise 1.3 - Zoom on Kyma CLI (optional)
