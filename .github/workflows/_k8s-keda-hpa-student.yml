@@ -312,6 +312,7 @@ env:
     - "name": "Increase the load"
       "run": |
         # so that the load generation continues and you can carry on with the rest of the steps
+        kubectl delete pod/load-generator -n $NAMESPACE || true
         kubectl run  -n $NAMESPACE  -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://faas-srv-$NAMESPACE.svc.cluster.local/metrics; done"
 
 
