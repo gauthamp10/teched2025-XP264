@@ -293,8 +293,9 @@ env:
 
     - "name": "check for the hpa and keda scale objects"
       "run": |
-        echo -e "display all hpas and scale objects in the namespace: $NAMESPACE..."
+        echo "display all pods in the namespace: $NAMESPACE..."
         kubectl get pod -n $NAMESPACE
+        echo -e "display all hpas and scale objects in the namespace: $NAMESPACE..."
         kubectl get hpa -n $NAMESPACE || true
         kubectl get hpa faas-srv -n $NAMESPACE || true
 
@@ -313,6 +314,8 @@ env:
         kubectl get hpa faas-srv -n $NAMESPACE || true
         kubectl delete hpa faas-srv -n $NAMESPACE || true
         kubectl get hpa faas-srv -n $NAMESPACE || true
+        echo "display all pods in the namespace: $NAMESPACE..."
+        kubectl get pod -n $NAMESPACE        
 
     # GitHub Action reference: https://github.com/jupyterhub/action-k8s-namespace-report
 #    - name: Kubernetes namespace report
