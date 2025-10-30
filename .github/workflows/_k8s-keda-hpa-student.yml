@@ -303,7 +303,7 @@ env:
       "run": |
         echo -e "kubectl autoscale function faas-srv in the namespace: $NAMESPACE..."
         #kubectl autoscale function faas-srv -n $NAMESPACE --cpu-percent=50 --min=5 --max=10 || true
-        kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=2 --max=3 || true        
+        kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=1 --max=1 || true        
         kubectl get hpa faas-srv -n $NAMESPACE || true
         echo "Wait until HPA is ready"
         kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=60s
