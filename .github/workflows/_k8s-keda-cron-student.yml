@@ -103,13 +103,13 @@ env:
     - "name": "Create a Function, a Deployment and a StatefulSet as sample workloads."
       "run": |
         echo "Create a Function, a Deployment and a StatefulSet as sample workloads. in the namespace: $NAMESPACE..."
-        kubectl -n $NAMESPACE apply -f {{ env.CONFIG_DIRECTORY}}/deployment.yaml
-        kubectl -n $NAMESPACE apply -f {{ env.CONFIG_DIRECTORY}}/function.yaml
-        kubectl -n $NAMESPACE apply -f {{ env.CONFIG_DIRECTORY}}/statefulset.yaml
+        kubectl -n $NAMESPACE apply -f ${{ env.CONFIG_DIRECTORY}}/deployment.yaml
+        kubectl -n $NAMESPACE apply -f ${{ env.CONFIG_DIRECTORY}}/function.yaml
+        kubectl -n $NAMESPACE apply -f ${{ env.CONFIG_DIRECTORY}}/statefulset.yaml
 
     - "name": "Apply KEDA cron-based scaling to these workloads."
       "run": |
-        kubectl -n $NAMESPACE apply -f k8s/keda-cron-scaler.yaml       
+        kubectl -n $NAMESPACE apply -f ${{ env.CONFIG_DIRECTORY}}/keda-cron-scaler.yaml       
 
     # GitHub Action reference: https://github.com/jupyterhub/action-k8s-namespace-report
 #    - name: Kubernetes namespace report
