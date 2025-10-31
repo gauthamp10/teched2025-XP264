@@ -112,26 +112,17 @@ env:
       "run": |
         echo -e "kubectl autoscale function faas-srv in the namespace: $NAMESPACE..."
         
-        kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=5 --max=10 || true        
+        kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=3 --max=10 || true        
         kubectl get hpa faas-srv -n $NAMESPACE || true
         
         echo "Wait until HPA is ready"
-        kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=90s
+        kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=180s
         echo "show HPA"
         kubectl get hpa faas-srv -n $NAMESPACE || true
 
         echo "wait for function scale out and deployment rollout complete"
         kubectl get function faas-srv -n $NAMESPACE -o jsonpath="{.status.conditions[1]}" | jq
-        kubectl wait --for=jsonpath="{.status.conditions[1].status}"=True function faas-srv -n $NAMESPACE --timeout=90s
-
-        #kubectl rollout status deployment faas-srv -n $NAMESPACE --timeout=90s
-
-#    - "name": "Increase the load"
-#      "run": |
-#        kubectl delete pod/load-generator -n $NAMESPACE --ignore-not-found
-#        kubectl wait --for=delete pod/load-generator  --timeout=60s
-#        kubectl run  -n $NAMESPACE  load-generator --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://faas-srv.xp264-050.svc.cluster.local/metrics; done"
-
+        kubectl wait --for=jsonpath="{.status.conditions[1].status}"=True function faas-srv -n $NAMESPACE --timeout=180s
 
     - "name": "scale back to a single replica."
       "run": |
