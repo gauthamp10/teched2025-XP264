@@ -111,6 +111,10 @@ env:
       "run": |
         kubectl -n $NAMESPACE apply -f ${{ env.CONFIG_DIRECTORY}}/keda-cron-scaler.yaml       
 
+    - "name": "Check the events occurring at the start or end time of the trigger."
+      "run": |
+        kubectl -n $NAMESPACE get events
+
     # GitHub Action reference: https://github.com/jupyterhub/action-k8s-namespace-report
 #    - name: Kubernetes namespace report
 #      uses: jupyterhub/action-k8s-namespace-report@v1

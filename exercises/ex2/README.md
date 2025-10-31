@@ -2,20 +2,29 @@
 
 ## Exercise 2.0 - Introduction to kubernetes autoscalers
 
+> [!NOTE]
+> Introduction to KEDA
+> KEDA, an open-source initiative that facilitates event-driven autoscaling for Kubernetes workloads, was originally developed by Microsoft and Red Hat. It has since become a sandbox project under the Cloud Native Computing Foundation (CNCF). KEDA focuses on autoscaling applications in response to events sourced from a variety of platforms, including Kafka, RabbitMQ, and cloud-specific services such as Azure Service Bus and Google Pub/Sub.
+
+The Benefits of KEDA
+KEDA ushers in a new era of flexibility and efficiency in autoscaling. It enhances Kubernetes' capacity to support fine-grained autoscaling for event-driven workloads. Leveraging KEDA, you can dynamically scale your deployments from zero to any arbitrary number, contingent on the volume of events they are designed to process.
 
 
+Additional reading...  
 
 - [KEDA](https://keda.sh/docs/2.18/), the Kubernetes Event-driven Autoscaler.  
-- [Use External Scalers witk SAP Kyma](https://kyma-project.io/#/serverless-manager/user/tutorials/01-130-use-external-scalers)
+- [Use External Scalers with SAP Kyma](https://kyma-project.io/#/serverless-manager/user/tutorials/01-130-use-external-scalers)
 - [Keda examples](https://github.com/kyma-project/keda-manager/tree/main/examples)
 - [SAP BTP, Kyma Runtime: Leveraging KEDA module capabilities for efficient and cost-effective scaling | SAP Blogs](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-btp-kyma-runtime-leveraging-keda-module-capabilities-for-efficient-and/ba-p/13573526)
 
 
 
 
-- Have your Function with the replicas value set to 1 to prevent the internal Serverless HPA creation.
 
 ## Exercise 2.1 - HPA
+
+- Have your Function with the replicas value set to 1 to prevent the internal Serverless HPA creation.
+
 
 https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-horizontalpodautoscaler-in-kubectl  
 
