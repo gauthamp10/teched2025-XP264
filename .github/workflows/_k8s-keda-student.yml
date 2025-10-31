@@ -112,7 +112,7 @@ env:
       "run": |
         echo -e "keda autoscale function faas-srv in the namespace: $NAMESPACE..."
         
-        cat <<EOF | kubectl apply -f
+        cat <<EOF | kubectl apply -f -
         apiVersion: keda.sh/v1alpha1
         kind: ScaledObject
         metadata:
@@ -142,8 +142,6 @@ env:
         echo "wait for function scale out and deployment rollout complete"
         kubectl get function faas-srv -n $NAMESPACE -o jsonpath="{.status.conditions[1]}" | jq
         kubectl wait --for=jsonpath="{.status.conditions[1].status}"=True function faas-srv -n $NAMESPACE --timeout=90s
-
-        #kubectl rollout status deployment faas-srv -n $NAMESPACE --timeout=90s
 
 #    - "name": "Increase the load"
 #      "run": |
