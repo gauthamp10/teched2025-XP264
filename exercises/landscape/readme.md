@@ -394,7 +394,77 @@ graph TB
 
 ```
 
-
+```mermaid
+---
+title: Deployment Architecture - Full version
+---
+graph TB
+    subgraph "Development"
+        DEV[Development Space]
+        DEVAPP[Dev Application]
+        DEVDB[Dev Database]
+    end
+    
+    subgraph "Testing"
+        TEST[Test Space]
+        TESTAPP[Test Application]
+        TESTDB[Test Database]
+    end
+    
+    subgraph "Production Provider"
+        PROD[Production Space]
+        PRODAPP[Provider Application]
+        SAASREG[SaaS Registry]
+        APPREGISTRY[Application Registry]
+    end
+    
+    subgraph "Production Consumer Subaccounts"
+        subgraph "Tenant A"
+            TENA[Tenant A Instance]
+            DBA[Database A]
+        end
+        
+        subgraph "Tenant B"
+            TENB[Tenant B Instance]
+            DBB[Database B]
+        end
+    end
+    
+    subgraph "CI/CD Pipeline"
+        GIT[Git Repository]
+        BUILD[Build Service]
+        DEPLOY[Deployment]
+    end
+    
+    DEV --> TEST
+    TEST --> PROD
+    
+    GIT --> BUILD
+    BUILD --> DEPLOY
+    DEPLOY --> DEVAPP
+    DEPLOY --> TESTAPP
+    DEPLOY --> PRODAPP
+    
+    PRODAPP --> SAASREG
+    SAASREG --> TENA
+    SAASREG --> TENB
+    
+    TENA --> DBA
+    TENB --> DBB
+    
+    %% Styling
+    classDef dev fill:#e8f5e8,stroke:#388e3c
+    classDef test fill:#fff3e0,stroke:#f57c00
+    classDef prod fill:#ffebee,stroke:#c62828
+    classDef tenant fill:#e3f2fd,stroke:#1976d2
+    classDef cicd fill:#f3e5f5,stroke:#7b1fa2
+    
+    class DEV,DEVAPP,DEVDB dev
+    class TEST,TESTAPP,TESTDB test
+    class PROD,PRODAPP,SAASREG,APPREGISTRY prod
+    class TENA,TENB,DBA,DBB tenant
+    class GIT,BUILD,DEPLOY cicd
+```
 
 ### Tenant Lifecycle Management
 
@@ -425,7 +495,41 @@ stateDiagram-v2
 
 
 ---------
-## Day 2 Operations Mermaid Chart Code
+
+## Day 2 Operations Overview
+
+```
+Core Components:
+
+1. Monitoring & Observability
+Application performance monitoring (APM)
+Infrastructure monitoring
+Log aggregation and analysis
+Metrics collection and alerting
+Distributed tracing
+
+2. Security & Compliance
+Security patch management
+Vulnerability scanning
+Compliance auditing
+Access control reviews
+Security incident response
+
+3. Performance Optimization
+Resource utilization analysis
+Performance tuning
+Query optimization
+Caching strategies
+Load balancing adjustments
+
+4. Backup & Disaster Recovery
+Regular backup operations
+Backup verification
+Disaster recovery testing
+RTO/RPO compliance
+```
+
+### Day 2 Operations Mermaid Chart Code
 
 ```mermaid
 ---
