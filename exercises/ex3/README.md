@@ -213,6 +213,8 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 
 - Feel free to explore further
 
+- SAP Cloud Logging architecture. 
+
 ```mermaid
 graph TB
     subgraph "Log Sources"

@@ -19,13 +19,27 @@
 - [Keda examples](https://github.com/kyma-project/keda-manager/tree/main/examples)
 - [SAP BTP, Kyma Runtime: Leveraging KEDA module capabilities for efficient and cost-effective scaling | SAP Blogs](https://community.sap.com/t5/technology-blog-posts-by-sap/sap-btp-kyma-runtime-leveraging-keda-module-capabilities-for-efficient-and/ba-p/13573526)
 
+> [!NOTE]
+> Pre-requisites:
+> - A Python Function, in every single student namespace, with the replicas value set to 1 to prevent the internal Serverless HPA creation.
 
 
+ |  k8s HPA-KEDA load generator workflow (namespaced)
+ | :---------  |
+ | [ k8s-hpa-keda-load-generator](../../../../actions/workflows/k8s-hpa-keda-load-generator.yml)
 
 
 ## Exercise 2.1 - HPA
 
-- Have your Function with the replicas value set to 1 to prevent the internal Serverless HPA creation.
+- 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
+
+ |  k8s HPA student workflow (namespaced)
+ | :---------  |
+ | [ k8s-hpa-student](../../../../actions/workflows/k8s-hpa-student.yml)
+
+
+The below steps are for illustration only. Please use the provided github actions workflows instead.
+
 
 
 https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-horizontalpodautoscaler-in-kubectl  
@@ -82,24 +96,21 @@ scale back to a single replica. how this is to be done ?
 
 In order to scale down from 2 or 5 replicas to 1 replica just remove the HPA resource?
 
-- 
-What about scaling down to zero ?
 
 
 
 ## Exercise 2.2 - KEDA
 
-After completing these steps you will have...
+- 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).
 
-- remove the HPA autoscaler
+ |  k8s KEDA student workflow (namespaced)
+ | :---------  |
+ | [ k8s-keda-student](../../../../actions/workflows/k8s-keda-student.yml)
 
-```
-kubectl delete hpa faas-srv  -n xp264-050 --kubeconfig ~/.kube/kubeconfig-<shoot_id>.yaml
-horizontalpodautoscaler.autoscaling "faas-srv" deleted
 
-```
 
 > [!NOTE]
+> the below is an example of a KEDA ScaledObject with the cpu trigger
 > ~~~rust
 > cat <<EOF | kubectl apply -f - --kubeconfig ~/.kube/kubeconfig-<shoot_id>.yaml
 > apiVersion: keda.sh/v1alpha1
@@ -127,6 +138,14 @@ horizontalpodautoscaler.autoscaling "faas-srv" deleted
 
 
 ## Exercise 2.3 - KEDA's Cron-Based Scaler
+
+- 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).
+
+ |  k8s KEDA CRON student workflow (namespaced)
+ | :---------  |
+ | [ k8s-keda-cron-student](../../../../actions/workflows/k8s-keda-cron-student.yml)
+
+
 
 KEDA offers a broad range of scaling strategies, one of which is the **cron-based scaler**. This scaler allows you to schedule scaling actions according to the time of day, an invaluable feature for managing predictable fluctuations in workload.
 
