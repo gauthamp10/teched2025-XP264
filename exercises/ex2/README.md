@@ -21,7 +21,7 @@
 - 👉 Take time to inspect the workflows run logs.  
 
 > [!TIP]
-> You may use kyma dashboard for interactive inspection as well
+> You may use [kyma dashboard](https://url.sap/4r4wbw) for interactive inspection as well.
 
 Furthermore, a dedicated load generator is to be run in a separate browser window...  
 - 👉 run the `k8s-hpa-keda-load-generator` workflow
@@ -64,6 +64,17 @@ PS. The below steps are for illustration only.
  | [ k8s-hpa-student](../../../../actions/workflows/k8s-hpa-student.yml)
 
 
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div> 
+<h1><a href=""><img class="aligncenter" src="../ex1/images/k8s-hpa-student.png" alt="" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
 
 ## Exercise 2.2 - KEDA
 

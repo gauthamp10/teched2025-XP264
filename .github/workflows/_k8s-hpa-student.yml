@@ -128,9 +128,11 @@ env:
         kubectl get function faas-srv -n $NAMESPACE -o jsonpath="{.status.conditions[1]}" | jq
         kubectl wait --for=jsonpath="{.status.conditions[1].status}"=True function faas-srv -n $NAMESPACE --timeout=180s
 
-        echo "enumerate all the resource in the namespace - it may take quite some time to run"
+        echo -e "\nenumerate all the resource in the namespace - it may take quite some time to run\n"
         kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -l app=faas-srv -n $NAMESPACE
-        echo "enumerate all the resource in the namespace - it may take quite some time to run"
+        echo "***** show HPA ******"
+        kubectl get hpa faas-srv -n $NAMESPACE || true
+        echo -e "\nenumerate all the resource in the namespace - it may take quite some time to run\n"
         kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -l app=faas-srv -n $NAMESPACE
 
         echo "***** show HPA ******"
