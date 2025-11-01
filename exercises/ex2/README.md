@@ -17,9 +17,13 @@
 > - A dedicated Python Function is provided, in every single student namespace, with the replicas value set to 1 to prevent the internal Serverless HPA creation.
 
 
-👉 Run the provided github actions workflows to experience HPA and KEDA inspect the workflow run log.
+👉 Run the provided github actions workflows to experience both HPA and KEDA
+👉 Take time to inspect the workflows run logs.  
 
-A dedicated load generator to be run in a separate browser window...  
+> [!TIP]
+> You may use kyma dashboard for interactive inspection as well
+
+Furthermore, a dedicated load generator is to be run in a separate browser window...  
 - 👉 run the `k8s-hpa-keda-load-generator` workflow
 - 👉 For the best experience, open the workflow link into into a new window (right click).  
 
