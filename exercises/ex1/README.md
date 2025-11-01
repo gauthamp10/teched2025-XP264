@@ -621,7 +621,7 @@ sequenceDiagram
 
 - 👉 run: `terraform init`
 
-~~~rust       
+> ~~~rust       
 > Initializing the backend...
 >
 > Successfully configured the backend "kubernetes"! Terraform will automatically
@@ -670,7 +670,7 @@ sequenceDiagram
 > If you ever set or change modules or backend configuration for Terraform,
 > rerun this command to reinitialize your working directory. If you forget, other
 > commands will detect it and remind you to do so if necessary.
-~~~
+> ~~~
 
 - 👉 run: `terraform workspace list`
 ```
