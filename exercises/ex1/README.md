@@ -1,6 +1,9 @@
 # Exercise 1 - First things first. Day-2 with SAP BTP, Kyma Runtime
 
-The Kubernetes landscape lifecycle is divided into so-called routines or days, namely:
+Day 2 Operations refers to the ongoing operational activities required to maintain, monitor, and optimize systems after the initial deployment (Day 1).   
+
+Summary of the routines or days:  
+
 - Day-0 -- Planning and Design
 - Day-1 -- Configuration and Deployment
 - Day-2 -- Run and Operations with the focus on Observability/Monitoring (with the OpenTelemetry), Security and Governance, Developers experience (automation, CI/CD tools), Storage, High Availability
@@ -12,6 +15,91 @@ The Kubernetes landscape lifecycle is divided into so-called routines or days, n
 <td style="width: 71.6%; height: 193px;">
 <div> 
 Day-2 Operations: Management, Maintenance, Monitoring, and Optimization
+
+
+```mermaid
+---
+config:
+  theme: redux
+  look: classic
+---  
+graph TD
+    A[Day 2 Operations] --> B[Monitoring & Observability]
+    A --> C[Security & Compliance]
+    A --> D[Performance Optimization]
+    A --> E[Backup & Disaster Recovery]
+    A --> F[Scaling & Capacity Planning]
+    A --> G[Maintenance & Updates]
+    A --> H[Incident Response]
+    A --> I[Cost Optimization]
+
+    B --> B1[Application Monitoring]
+    B --> B2[Infrastructure Monitoring]
+    B --> B3[Log Management]
+    B --> B4[Metrics & Alerting]
+    B --> B5[Distributed Tracing]
+
+    C --> C1[Security Patches]
+    C --> C2[Vulnerability Scanning]
+    C --> C3[Compliance Auditing]
+    C --> C4[Access Control]
+    C --> C5[Security Incidents]
+
+    D --> D1[Resource Optimization]
+    D --> D2[Query Tuning]
+    D --> D3[Caching Strategies]
+    D --> D4[Load Balancing]
+    D --> D5[Performance Testing]
+
+    E --> E1[Regular Backups]
+    E --> E2[Backup Verification]
+    E --> E3[DR Testing]
+    E --> E4[RTO/RPO Planning]
+    E --> E5[Data Retention]
+
+    F --> F1[Auto-scaling]
+    F --> F2[Capacity Forecasting]
+    F --> F3[Resource Provisioning]
+    F --> F4[Performance Benchmarks]
+    F --> F5[Growth Planning]
+
+    G --> G1[Software Updates]
+    G --> G2[Configuration Management]
+    G --> G3[Database Maintenance]
+    G --> G4[Certificate Renewal]
+    G --> G5[Dependency Updates]
+
+    H --> H1[Alert Management]
+    H --> H2[Incident Escalation]
+    H --> H3[Root Cause Analysis]
+    H --> H4[Post-mortem Reviews]
+    H --> H5[Process Improvement]
+
+    I --> I1[Resource Optimization]
+    I --> I2[Usage Analysis]
+    I --> I3[Cost Monitoring]
+    I --> I4[Budget Planning]
+    I --> I5[Waste Elimination]
+
+    %% Feedback loops
+    B4 --> H1
+    H5 --> B4
+    D1 --> I1
+    F2 --> I2
+    C2 --> C1
+    E3 --> E4
+
+    %% Styling
+    classDef mainNode fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef categoryNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef activityNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:1px
+
+    class A mainNode
+    class B,C,D,E,F,G,H,I categoryNode
+    class B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4,D5,E1,E2,E3,E4,E5,F1,F2,F3,F4,F5,G1,G2,G3,G4,G5,H1,H2,H3,H4,H5,I1,I2,I3,I4,I5 activityNode
+```
+</div> 
+<div>   
 
 ```mermaid
 ---
@@ -48,7 +136,7 @@ gantt
 
 <div>
 
-  
+
 ```mermaid
 ---
 config:
