@@ -84,15 +84,15 @@ gantt
     Alert Processing         :alert, 00:00, 24:00
     
     section Daily Tasks
-    Security Patches (SAP SRE):patch, 02:00, 04:00
+    Security Patches         :patch, 02:00, 04:00
     Backup Verification      :backup, 03:00, 05:00
     Performance Review       :perf, 08:00, 10:00
-    Cost Analysis           :cost, 14:00, 16:00
+    Cost Analysis            :cost, 14:00, 16:00
     
     section Weekly Tasks
     Capacity Planning       :capacity, 09:00, 12:00
-    DR Testing             :dr, 10:00, 14:00
-    Security Audit         :audit, 13:00, 17:00
+    DR Testing              :dr, 10:00, 14:00
+    Security Audit          :audit, 13:00, 17:00
     
     section Monthly Tasks
     Post-mortem Reviews    :review, 09:00, 11:00
