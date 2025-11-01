@@ -722,7 +722,10 @@ Here goes a diagram of the functional architecture of the solution
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
+<!--
 <h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/functional_architecture.png" alt=""/></a></h1>
+-->
+<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../landscape/images/d-com-multi-tenant-saas.png" alt=""/></a></h1>
 
 
 ```mermaid
@@ -738,20 +741,10 @@ graph TD
         Microservice(Microservice A)
     end
 
-    subgraph "Data Layer"
-        Shared_DB[("Shared Database Instance")]
-        TenantA_Schema[Schema for Tenant A]
-        TenantB_Schema[Schema for Tenant B]
-    end
-
     %% Define the data flow
     TenantA_User -->|Request for Tenant A data| API_Gateway
     TenantB_User -->|Request for Tenant B data| API_Gateway
     API_Gateway -->|Route request to service| Microservice
-    Microservice -->|Connect to Schema 'A'| TenantA_Schema
-    Microservice -->|Connect to Schema 'B'| TenantB_Schema
-    Shared_DB -- Each tenant has a separate schema (namespace) --> TenantA_Schema
-    Shared_DB -- Improved isolation compared to a shared schema --> TenantB_Schema
 
 ```
 
