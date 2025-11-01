@@ -213,6 +213,157 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 
 - Feel free to explore further
 
+```mermaid
+graph TB
+    subgraph "Log Sources"
+        subgraph "SAP BTP Applications"
+            CF_APP[Cloud Foundry Apps]
+            KYMA_APP[Kyma Runtime Apps]
+            NEO_APP[Neo Environment Apps]
+        end
+        
+        subgraph "SAP Systems"
+            S4HANA[SAP S/4HANA]
+            ECC[SAP ECC]
+            BW[SAP BW]
+        end
+        
+        subgraph "Custom Applications"
+            CUSTOM_APP[Custom Apps]
+            MICROSERVICE[Microservices]
+        end
+    end
+
+    subgraph "SAP Cloud Logging Service"
+        subgraph "Ingestion Layer"
+            FLUENTD[Fluentd Agent]
+            RSYSLOG[Rsyslog Forwarder]
+            HTTP_API[HTTP Ingestion API]
+            OTLP[OpenTelemetry Collector]
+        end
+
+        subgraph "Processing Layer"
+            PARSER[Log Parser]
+            ENRICHER[Log Enricher]
+            FILTER[Filter & Transform]
+            BUFFER[Buffer Queue]
+        end
+
+        subgraph "Storage Layer"
+            OPENSEARCH[OpenSearch Cluster]
+            subgraph "Indices"
+                HOT_INDEX[Hot Index<br/>Recent Logs]
+                WARM_INDEX[Warm Index<br/>7-30 days]
+                COLD_INDEX[Cold Index<br/>30+ days]
+            end
+            S3_BACKUP[Object Storage<br/>Long-term Archive]
+        end
+
+        subgraph "Query & Analysis Layer"
+            OPENSEARCH_API[OpenSearch API]
+            QUERY_ENGINE[Query Engine]
+            AGGREGATION[Aggregation Engine]
+        end
+
+        subgraph "Visualization & Access"
+            OPENSEARCH_DASH[OpenSearch Dashboards]
+            KIBANA[Kibana Interface]
+            REST_API[REST API]
+            CLI[CLI Tools]
+        end
+
+        subgraph "Management & Monitoring"
+            RETENTION[Retention Policy Mgmt]
+            INDEX_MGMT[Index Lifecycle Mgmt]
+            ALERTING[Alerting Engine]
+            METRICS[Service Metrics]
+        end
+    end
+
+    subgraph "Integration & Consumption"
+        SAP_AMS[SAP AMS]
+        THIRD_PARTY[Third-party SIEM]
+        ANALYTICS[Analytics Tools]
+        MONITORING[Monitoring Systems]
+    end
+
+    subgraph "Security & Compliance"
+        IAM[Identity & Access Mgmt]
+        ENCRYPT[Encryption at Rest/Transit]
+        AUDIT[Audit Logging]
+        COMPLIANCE[Compliance Controls]
+    end
+
+    %% Log Source to Ingestion
+    CF_APP -->|Logs| FLUENTD
+    KYMA_APP -->|Logs| FLUENTD
+    NEO_APP -->|Logs| RSYSLOG
+    S4HANA -->|Syslog| RSYSLOG
+    ECC -->|Syslog| RSYSLOG
+    BW -->|Syslog| RSYSLOG
+    CUSTOM_APP -->|HTTP/JSON| HTTP_API
+    MICROSERVICE -->|OTLP| OTLP
+
+    %% Ingestion to Processing
+    FLUENTD --> PARSER
+    RSYSLOG --> PARSER
+    HTTP_API --> PARSER
+    OTLP --> PARSER
+
+    %% Processing Flow
+    PARSER --> ENRICHER
+    ENRICHER --> FILTER
+    FILTER --> BUFFER
+
+    %% Storage Flow
+    BUFFER --> OPENSEARCH
+    OPENSEARCH --> HOT_INDEX
+    HOT_INDEX -->|Age-based| WARM_INDEX
+    WARM_INDEX -->|Age-based| COLD_INDEX
+    COLD_INDEX -->|Archive| S3_BACKUP
+
+    %% Query Flow
+    OPENSEARCH --> OPENSEARCH_API
+    OPENSEARCH_API --> QUERY_ENGINE
+    QUERY_ENGINE --> AGGREGATION
+
+    %% Visualization Access
+    AGGREGATION --> OPENSEARCH_DASH
+    AGGREGATION --> KIBANA
+    OPENSEARCH_API --> REST_API
+    REST_API --> CLI
+
+    %% Management
+    RETENTION --> INDEX_MGMT
+    INDEX_MGMT --> OPENSEARCH
+    ALERTING --> OPENSEARCH_API
+    METRICS -.->|Monitor| OPENSEARCH
+
+    %% External Integration
+    REST_API --> SAP_AMS
+    REST_API --> THIRD_PARTY
+    OPENSEARCH_API --> ANALYTICS
+    ALERTING --> MONITORING
+
+    %% Security Layer
+    IAM --> REST_API
+    IAM --> OPENSEARCH_DASH
+    IAM --> KIBANA
+    ENCRYPT -.->|Protects| OPENSEARCH
+    AUDIT -.->|Tracks| OPENSEARCH_API
+    COMPLIANCE -.->|Enforces| RETENTION
+
+    %% Styling
+    style OPENSEARCH fill:#005f9e
+    style HOT_INDEX fill:#ff9900
+    style WARM_INDEX fill:#ffd700
+    style COLD_INDEX fill:#87ceeb
+    style FLUENTD fill:#0e83c8
+    style OPENSEARCH_DASH fill:#005571
+    style ALERTING fill:#e74c3c
+    style ENCRYPT fill:#27ae60
+```
+
 ## Next steps
 
 Continue to - [Exercise 4 - Explore SAP BTP Connectivity Capabilities in Kyma](../ex4/README.md)
