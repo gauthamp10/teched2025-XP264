@@ -758,31 +758,13 @@ Optional practice:
 > * However, the access to the subscribed app is SSO-ringfenced...
 > * All the subsciptions can be viewed from the subscription dashboard on the provider side...
 > * The workflow can be used to unsubscribe. If you choose to do it, please make sure you use the allocated students name.
-> 
-> * If this happens to be a first time subscription, please let me go the consumer tenant and disable the SAP IDS for user logon, as depicted below:
 
-<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
-<tbody>
-<tr style="height: 193px;">
-<td style="width: 71.6%; height: 193px;">
-<div>
-<h1><a href="https://url.sap/esb19m">
-<p float="left">
-  <img src="../ex1/images/Default-identity-provider.png" width="450" height="600"/>
-  <img src="../ex1/images/Default-identity-provider-edit.png" width="450" height="600"/>
-  <img src="../ex1/images/Default-identity-provider-save.png" /> 
-</p>
-</a></h1>
-</div>
-</td>
-</tr>
-</tbody>
-</table> 
 
 > [!TIP]
 >
-> - Please observe the consumer context is very much empty. The consumer subaccount acts as a service provider ensuring user authentication and permissions validation in order to access the subscription.
+> - Please observe the consumer context is very much empty. The consumer subaccount acts as a service provider ensuring user authentication and permissions validation in order to access the subscription.  
 
+### Subscription management dashboard
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
