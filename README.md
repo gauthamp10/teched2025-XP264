@@ -1,5 +1,17 @@
 # XP264- Explore how to run cloud-native applications on SAP BTP, Kyma runtime
 
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href="https://url.sap/xuntr9"><img class="aligncenter" src="exercises/ex0/images/TechEd_2025.jpg" alt="TechEd_2025" /></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>  
+
 ## Description
 
 This repository contains the material for the SAP TechEd 2025 session catalog number XP264 - [**Explore how to run cloud-native applications on SAP BTP, Kyma runtime.**](https://url.sap/xuntr9)  
