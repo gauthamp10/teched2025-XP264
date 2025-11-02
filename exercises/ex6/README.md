@@ -63,7 +63,7 @@ This ```s4any``` Destination CR points to ```s4-anywhere``` destination which ta
 1. Execute the following command in the terminal
 Request:
 ```
-curl -s 's4any/sap/opu/odata/sap/api_business_partner/A_BusinessPartner?sap-client=400&$top=5&$select=BusinessPartnerFullName&$format=json' -H "Authorization: $(cat token)" | jq .d.results[].BusinessPartnerFullName
+curl -s 's4any/sap/opu/odata/sap/api_business_partner/A_BusinessPartner?sap-client=400&$top=5&$select=BusinessPartnerFullName&$format=json' | jq .d.results[].BusinessPartnerFullName
 ```
 Response:
 ```
@@ -80,8 +80,7 @@ If you'd like to explore the raw JSON output, re-execute the commant ommiting th
 
 Request:
 ```
-curl -s 'gateway/sap/opu/odata/sap/api_business_partner/A_BusinessPartner?sap-client=400&$top=5&$select=BusinessPartnerFullName&$format=js
-on' -H "X-Destination-Name: s4-anywhere" -H "Authorization: $(cat token)" | jq .d.results[].BusinessPartnerFullName
+curl -s 'gateway/sap/opu/odata/sap/api_business_partner/A_BusinessPartner?sap-client=400&$top=5&$select=BusinessPartnerFullName&$format=json' -H "X-Destination-Name: s4-anywhere" | jq .d.results[].BusinessPartnerFullName
 ```
 Response:
 ```
