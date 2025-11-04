@@ -112,7 +112,96 @@ You may login to [SAP-TechEd25-XP264 Business Technology Platform - Cockpit](htt
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://url.sap/yogrmc"><img class="aligncenter" src="../ex0/images/SAP-TechEd25-XP264.png" alt="SAP-TechEd25-XP264" /></a></h1>
+<h1><a href="https://url.sap/yogrmc"><img class="aligncenter" src="../ex0/images/SAP-TechEd25-XP264.png" alt="SAP-TechEd25-XP264" /></a>
+</h1>
+
+
+```mermaid
+graph TB
+    subgraph GLOBAL_ACCOUNT["SAP BTP Global Account"]
+        
+        subgraph PROVIDER_REGION["Provider Region (eu20)"]
+            PROVIDER[Provider Subaccount]
+            CLS[Cloud Logging Service]
+            OSC[(OpenSearch Cluster)]
+            HDB[(HANA Cloud)]
+            
+            PROVIDER --> CLS
+            PROVIDER --> HDB
+            CLS --> OSC
+        end
+        
+        subgraph REGION_EU["☁️ Europe (cf-eu20)"]
+            RT1_EU[RT1: Production EU]
+            RT4_EU[RT4: Development]
+            RT5_EU[RT5: QA/Test]
+            RT6_EU[RT6: Staging]
+            RT7_EU[RT7: Integration]
+            RT8_EU[RT8: Sandbox]
+            
+            KYMA_EU[Kyma Runtime<br/>xp264-001]
+            KYMA_UK[Kyma Runtime<br/>uk-south]
+            KYMA_UK2[Kyma Runtime<br/>xp264-050]
+            KYMA_UK3[Kyma Runtime<br/>xp264-045]
+            KYMA_UK4[Kyma Runtime<br/>xp264-000]
+            KYMA_UK5[Kyma Runtime<br/>uk-xp264]
+            
+            RT1_EU --> KYMA_UK
+            RT1_EU --> KYMA_EU
+            RT4_EU --> KYMA_UK2
+            RT5_EU --> KYMA_UK3
+            RT6_EU --> KYMA_UK4
+            RT7_EU --> KYMA_UK5
+            RT8_EU --> KYMA_UK
+        end
+        
+        subgraph REGION_US["☁️ United States (us-east)"]
+            RT2_US[RT2: Production US]
+            KYMA_US[Kyma Runtime<br/>us-east]
+            
+            RT2_US --> KYMA_US
+        end
+        
+        subgraph REGION_APAC["☁️ Asia Pacific (Japan-east)"]
+            RT3_APAC[RT3: Production APAC]
+            KYMA_APAC[Kyma Runtime<br/>japan-east]
+            
+            RT3_APAC --> KYMA_APAC
+        end
+    end
+    
+    RT1_EU -->|HTTPS| CLS
+    RT4_EU -->|HTTPS| CLS
+    RT5_EU -->|HTTPS| CLS
+    RT6_EU -->|HTTPS| CLS
+    RT7_EU -->|HTTPS| CLS
+    RT8_EU -->|HTTPS| CLS
+    RT2_US -->|HTTPS<br/>Cross-Region| CLS
+    RT3_APAC -->|HTTPS<br/>Cross-Region| CLS
+
+    RT1_EU -->|HTTPS| HDB
+    RT4_EU -->|HTTPS| HDB
+    RT5_EU -->|HTTPS| HDB
+    RT6_EU -->|HTTPS| HDB
+    RT7_EU -->|HTTPS| HDB
+    RT8_EU -->|HTTPS| HDB
+    RT2_US -->|HTTPS<br/>Cross-Region| HDB
+    RT3_APAC -->|HTTPS<br/>Cross-Region| HDB
+
+    style PROVIDER_REGION fill:#0066cc,color:#fff
+    style REGION_EU fill:#00b388,color:#fff
+    style REGION_US fill:#00b388,color:#fff
+    style REGION_APAC fill:#00b388,color:#fff
+    style RT1_EU fill:#006400,color:#fff
+    style RT2_US fill:#006400,color:#fff
+    style RT3_APAC fill:#006400,color:#fff
+    style RT4_EU fill:#f0ab00,color:#000
+    style RT5_EU fill:#f0ab00,color:#000
+    style RT6_EU fill:#f0ab00,color:#000
+    style RT7_EU fill:#f0ab00,color:#000
+    style RT8_EU fill:#ff6666,color:#fff
+```
+
 </div>
 </td>
 </tr>
