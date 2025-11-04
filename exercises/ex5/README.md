@@ -84,6 +84,7 @@ s4any     ExternalName   <none>       s4any-5cmhg.sap-transp-proxy-system.svc.cl
 <br></br>
 > [!IMPORTANT]
 > For each ```Kuberenetes Service``` associated with a BTP ```destination```, the Transparent Proxy will invisibly but securely handle the traffic sent to the ```Service``` and hide the relevant technical complexity via automating technical connectivity flows and enchancing the requests with needed artefacts. You'd further try it yourself in the next exercise.
+<br></br>
 
 <details>
 <summary>💡 <b>In case of problems</b> with command line environment, expand here and follow</summary>
