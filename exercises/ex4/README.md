@@ -57,7 +57,11 @@ This exercise focuses on the following two modules. To read more about each of t
 - [**Transparent Proxy**](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/1700cfe070704d2e80aa76de1033a6c4.html) - _Outbound_. An integral part of [SAP BTP Connectivity capabilities](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e54cc8fbbb571014beb5caaf6aa31280.html). Enables workloads to establish **_unified, virtually transparent_** technical connectivity to any remote system - hosted either in public or private networks. It works seamlessly with other modules like **Istio** and **Connectivity Proxy** module. The relevant target system-specific technical connectivity configurations are managed centrally as **_destinations_** in [Destination service](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/8ff5483fef564eae9f34fe092d1bddcd.html).
 
 This solution diagram shows the big picture through the blend of [SAP BTP Connectivity](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e54cc8fbbb571014beb5caaf6aa31280.html) in the context of Kyma environment:
-<br>![](/exercises/ex4/images/sap-btp-connectivity-kyma.jpg)
+
+<p float="left">
+  <img src="/exercises/ex4/images/sap-btp-connectivity-kyma.jpg" width="500" />
+</p>
+ 
 
 > [!TIP]
 > As you can see, each of the components serves **a dedicated purpose** and **adds to the value of the other**, and **all together** ultimately generate even **greater value**.
