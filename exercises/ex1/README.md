@@ -295,7 +295,7 @@ sequenceDiagram
 
 
 |  Kyma dashboard | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced) 
-| :---------  | --------- | :--------- | :------- | -----------
+| :---------  | --------- | :--------- | :------- 
 | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="35" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml) 
 | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="35" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)  
 | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="35" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
