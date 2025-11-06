@@ -583,7 +583,7 @@ Optional practice (requires VSCode terminal):
 - 👉 open: VSCode terminal window  
 Then, in the terminal:  
 - 👉 run (MacOS): `export KUBE_CONFIG_PATH=~/Downloads/timeboxed_kubeconfigs/xp264-050-sa.yaml`
-- 👉 run (Windows): `$env:KUBE_CONFIG_PATH="C:\Users\<username>\Downloads\timeboxed_kubeconfigs/xp264-050-sa.yaml`
+- 👉 run (Windows): `$env:KUBE_CONFIG_PATH="C:\Users\<username>\Downloads\timeboxed_kubeconfigs\xp264-050-sa.yaml`
 - 👉 run: `terraform init`
 
 > ~~~rust       
