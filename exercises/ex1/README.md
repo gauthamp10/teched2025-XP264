@@ -617,7 +617,7 @@ Then, in the terminal window:
 > ~~~
 
 > [!NOTE]
-> * each workspace name format is as follows: `k8ss-context-<cluster region><namespace>`
+> * each workspace name format is as follows: `k8s-context-<cluster region><namespace>`
 > * most likely the selected workspace in the above list will not match your diagnostic run  
 > * thus you need to select that matching workspace...  
 >
