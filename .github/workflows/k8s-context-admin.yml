@@ -51,7 +51,7 @@ jobs:
         echo 'CLUSTER_CONTEXT=$CLUSTER_CONTEXT'  >> "$GITHUB_OUTPUT"
 
 
-  student-namespaced-pipeline:
+  admin-cluster-wide-pipeline:
     needs: cluster-context
     strategy:
       max-parallel: 4
