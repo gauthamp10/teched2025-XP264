@@ -1,0 +1,65 @@
+name: k8s-context-admin
+on:
+  workflow_dispatch:
+    inputs:
+      subaccount_name:
+        description: "k8s region prefix"
+        required: true
+        default: "uk-south"
+        type: "choice"
+        options:
+          - "uk-south"
+          - "japanese-east"
+          - "us-east"
+          - "xp264-000"
+          - "xp264-001"
+          - "xp264-045"
+          - "xp264-050"
+          - "uk-xp264"
+
+env:
+  CLUSTER_CONTEXT: |
+      "${{ inputs.subaccount_name == 'uk-xp264' && 'garden-kyma--b84edf3-external'
+      || inputs.subaccount_name == 'uk-south' && 'garden-kyma--a896778-external' 
+      || inputs.subaccount_name == 'xp264-000' && 'garden-kyma--c-4d2de7e-external'
+      || inputs.subaccount_name == 'japanese-east' && 'garden-kyma--c-99567a9-external'
+      || inputs.subaccount_name == 'us-east' && 'garden-kyma--ca15e0c-external'
+      || inputs.subaccount_name == 'xp264-001' && 'garden-kyma--c-13f520f-external'
+      || inputs.subaccount_name == 'xp264-045' && 'garden-kyma--b242c25-external'      
+      || inputs.subaccount_name == 'xp264-050' && 'garden-kyma--b07e82e-external' 
+      }}"
+
+
+permissions: 
+  contents: read
+  id-token: write
+
+
+jobs:
+  cluster-context:
+    "runs-on":
+    - "ubuntu-latest"    
+
+    outputs:
+      CLUSTER_CONTEXT: ${{ env.CLUSTER_CONTEXT }}
+
+    steps:
+    - name: CLUSTER_CONTEXT
+      id: cluster_context
+      run: |
+        echo "kyma btp region: ${{ inputs.subaccount_name }}"
+        echo 'CLUSTER_CONTEXT=$CLUSTER_CONTEXT'  >> "$GITHUB_OUTPUT"
+
+
+  student-namespaced-pipeline:
+    needs: cluster-context
+    strategy:
+      max-parallel: 4
+      matrix:
+        namespace: [ "jupyter" ]
+
+    uses: ./.github/workflows/_k8s-context-admin.yml
+    with:
+      NAMESPACE: ${{ matrix.namespace }}
+      CLUSTER_CONTEXT: ${{ fromJSON(needs.cluster-context.outputs.CLUSTER_CONTEXT) }}
+      IDP: "anuk8cmfw.accounts.ondemand.com"
