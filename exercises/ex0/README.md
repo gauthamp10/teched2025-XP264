@@ -116,7 +116,7 @@ Access to the solution landscape is provided via the [Easy Navigation dashboard]
 
 ## Exercise 0.3 - BTP landscape at a glance.
 
-All students have their SSO acces with the student's credentials to parts of the SAP-TechEd25-XP264 landscape.  
+All students have their SSO acces with the student's credentials to the relevant parts of the [SAP-TechEd25-XP264 landscape](https://url.sap/yogrmc).  
 
 You may login to [SAP-TechEd25-XP264 Business Technology Platform - Cockpit](https://url.sap/yogrmc) 
 
