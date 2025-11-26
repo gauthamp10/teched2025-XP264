@@ -8,7 +8,7 @@ on:
         default: "xp264-045"
         type: "choice"
         options:
-          - "xp264-045"
+          - "uk-south"
 
       "NAMESPACE":
         "default": "xp264-050"
